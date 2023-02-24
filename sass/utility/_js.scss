@@ -1,0 +1,86 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#top {
+
+    .showHeader {
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+    .transparentHeader {
+        background: $bg-feature;
+        border-bottom-color: $white;
+        color: $white;
+
+        .header__ttl {
+            border-right-color: $white;
+        }
+
+        .header__logo path {
+            fill: $white;
+        }
+
+        .header__list {
+            color: $white;
+            border-right-color: $white;
+        }
+
+        .header__link path {
+            stroke: $white;
+        }
+
+        .header__mouse {
+            border-left-color: $white;
+           & path, line {
+            stroke: $white;
+           }}
+
+        .gnav {
+            background: $bg-feature;
+        }
+
+        .gnav__nav {
+            border-bottom-color: $white;
+        }
+
+        .gnav__link {
+            color: $white;
+        }
+
+
+    }
+
+    .notFixed {
+        position: static;
+    }
+
+    .rotateTop {
+        transform: rotate(45deg);
+    }
+
+    .hideMiddle {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .rotateBottom {
+        transform: rotate(-45deg);
+    }
+
+    .slideGnav {
+        transform: translate(0);
+        visibility: visible;
+        pointer-events: all;
+    }
+
+    .noScroll {
+        animation: noScroll .5s ease-in-out 1 normal forwards;
+    }
+
+    .isRisen {
+        animation: curtain 1s ease-in-out 1 normal forwards;
+    }
+
+}
