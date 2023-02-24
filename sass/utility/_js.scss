@@ -52,6 +52,15 @@
 
     }
 
+    .bgChange {
+        background: $bg-work;
+
+        .gnav {
+            background: $bg-work;
+        }
+
+    }
+
     .notFixed {
         position: static;
     }

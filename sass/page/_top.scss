@@ -357,7 +357,7 @@
             overflow: hidden;
 
             @media screen and (min-width: 768px) {
-                margin-top: -320vh;
+                margin-top: -220vh;
                 margin-bottom: -55vh;
             }
 
@@ -395,11 +395,17 @@
 
         &__list {
             width: 75%;
+            box-shadow: 8px 8px 24px rgba(39, 39, 39, 0.2);
+
+            @media screen and (min-width: 768px) {
+                box-shadow: 12px 12px 24px rgba(39, 39, 39, 0.2);
+            }
 
             @media screen and (min-width: 1024px) {
                 flex-shrink: 0;
                 width: 796px;
                 height: 447px;
+                box-shadow: 16px 16px 42px rgba(39, 39, 39, 0.2);
 
                 &:nth-of-type(odd) {
                     align-self: flex-end;
@@ -444,7 +450,9 @@
         }
 
         &__right {
-            width: 10%;
+            @media screen and (min-width: 1024px) {
+                width: 10%;
+            }
         }
 
         &__logo {
@@ -456,7 +464,7 @@
 
             @media screen and (min-width: 1024px) {
                 width: 293px;
-                transform: translateX(200%);
+                transform: translateX(100%);
             }
         }
 
@@ -502,7 +510,7 @@
 
         &__warplink {
             @include link($color: $white);
-            
+
         }
 
         &__menu {
@@ -523,7 +531,9 @@
             }
 
             @media screen and (min-width: 1024px) {
-                margin-top: 100vh;
+                gap: 3vw;
+                margin-top: 25vh;
+                padding: 10% 4.1vw;
             }
         }
 
@@ -537,7 +547,9 @@
             }
 
             @media screen and (min-width: 768px) {
-                margin-bottom: 0;
+                &:not(:last-of-type) {
+                    margin-bottom: 0px;
+                }
             }
         }
 
@@ -552,22 +564,42 @@
 
         &__thumb {
             margin-bottom: 3.6vh;
+            box-shadow: 8px 8px 24px rgba(39, 39, 39, 0.2);
 
             @media screen and (min-width: 768px) {
                 width: 43vw;
                 height: 240px;
                 margin-bottom: 32px;
+                box-shadow: 12px 12px 24px rgba(39, 39, 39, 0.2);
+            }
+
+            @media screen and (min-width: 1024px) {
+                width: 28vw;
+                height: auto;
+                margin-bottom: 28px;
+                box-shadow: 16px 16px 42px rgba(39, 39, 39, 0.2);
             }
         }
 
         &__name {
             margin-bottom: 1.3vh;
+
+            @media screen and (min-width: 1024px) {
+                font-size: 18px;
+                margin-bottom: 16px;
+            }
         }
 
         &__outerlink {
             display: inline-block;
             width: 12px;
             height: 12px;
+
+            @media screen and (min-width: 1024px) {
+                margin-left: 5px;
+                width: 14px;
+                height: 14px;
+            }
         }
 
         &__svg {
@@ -584,6 +616,10 @@
 
         overflow: hidden;
 
+        @media screen and (min-width: 1024px) {
+            z-index: 11;
+        }
+
         &__ttl {
             @include ttl;
             position: fixed;
@@ -596,6 +632,11 @@
             @media screen and (min-width: 768px) {
                 @include ttl($fz: 80px, $lh: 1.1);
             }
+
+            @media screen and (min-width: 1024px) {
+                @include ttl($fz: 128px);
+                // visibility: visible;
+            }
         }
 
         &__intro {
@@ -607,8 +648,12 @@
             padding: 88px 0 30px;
 
             @media screen and (min-width: 768px) {
-
                 padding: 118px 0 60px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                padding: 204px 0 90px;
+                margin-top: -150vh;
             }
         }
 
@@ -620,6 +665,10 @@
             @media screen and (min-width: 768px) {
                 gap: 107px;
             }
+        }
+
+        &__main {
+            margin-bottom: 50vh;
         }
 
         &__message {
@@ -645,6 +694,11 @@
                 margin-bottom: 24px;
                 font-size: 48px;
             }
+
+            @media screen and (min-width: 1024px) {
+                margin-bottom: 20px;
+                font-size: 55px;
+            }
         }
 
         &__note {
@@ -654,6 +708,10 @@
 
             @media screen and (min-width: 768px) {
                 font-size: 17px;
+            }
+
+            @media screen and (min-width: 1024px) {
+              font-size: 20px;
             }
         }
 
@@ -669,6 +727,11 @@
                 gap: 50px;
                 padding: 17% 4%;
             }
+
+            @media screen and (min-width: 1024px) {
+                gap: 80px;
+              padding: 10% 8.3vw;
+            }
         }
 
         &__item {
@@ -683,6 +746,10 @@
                 gap: 16px;
                 width: 200px;
             }
+
+            @media screen and (min-width: 1024px) {
+              width: 13vw;
+            }
         }
 
         &__pic {
@@ -692,6 +759,11 @@
             @media screen and (min-width: 768px) {
                 width: 100px;
                 height: 100px;
+            }
+
+            @media screen and (min-width: 1024px) {
+              width: 120px;
+              height: 120px;
             }
         }
 
@@ -707,6 +779,10 @@
             @media screen and (min-width: 768px) {
                 font-size: 16px;
             }
+
+            @media screen and (min-width: 1024px) {
+              font-size: 18px;
+            }
         }
 
         &__txt {
@@ -717,6 +793,10 @@
             @media screen and (min-width: 768px) {
                 font-size: 12px;
                 line-height: 1.6;
+            }
+
+            @media screen and (min-width: 1024px) {
+              font-size: 14px;
             }
         }
     }

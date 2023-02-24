@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const header = document.getElementById("header");
     const intro = document.getElementById("intro");
     const ST = window.pageYOffset;
+    const headerHeight = header.offsetHeight;
     let introHeight = intro.clientHeight;
 
     if (ST >= introHeight) {
@@ -21,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       header.classList.remove("showHeader");
     }
+
+    if (window.matchMedia("(min-width: 1024px)").matches) {
 
     const feature = document.getElementById('work__feature');
     const featureRect = feature.getBoundingClientRect();
@@ -33,9 +36,21 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       header.classList.remove('transparentHeader');
     }
+    
 
+    const workMenu = document.getElementById('work__menu');
+    const menuRect = workMenu.getBoundingClientRect();
+    const menuY = menuRect.top;
+    const headerBottom = headerHeight;
 
-    console.log(featureY);
+    // console.log(menuoffY);
+
+    if (menuY <= headerBottom) {
+      header.classList.add('bgChange');
+    } else {
+      header.classList.remove('bgChange');
+    }
+  }
   });
 
 
@@ -1688,6 +1703,7 @@ document.addEventListener("DOMContentLoaded", function () {
           start: "top top",
           end: "bottom top",
           pin: true,
+          // pinSpacing: false,
           scrub: 1,
           markers: false,
         },
@@ -1711,17 +1727,20 @@ document.addEventListener("DOMContentLoaded", function () {
         .set('.work__logo', {
           bottom: "30%",
           left: '15%',
+
         })
 
         .set('.work__feature', {
           xPercent: 100,
         })
 
+
+
         .to(
           ".work__feature",
           {
             xPercent: 0,
-            duration: 30,
+            duration: 50,
           }, 'same1'
           )
 
@@ -1729,7 +1748,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ".work__logo",
             {
               translateX: 0,
-              duration: 30,
+              duration: 80,
             },
             "same1+=6"
             )
@@ -1754,13 +1773,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             .to('.work__cover', {
             scale: 1,
-            duration: 20,
+            duration: 100,
+            // delay: 5,
           }, 'same3')
                       
           .to('.work__logo', {
             bottom: "7%",
             left: '3%',
-            duration: 20,
+            duration: 50,
           }, 'same3')
 
           .set('.header', {
@@ -1769,25 +1789,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
         .to('.work__unit', {
           xPercent: -70,
-          duration: 100,
-          delay: 3,
+          duration: 200,
         })
+
+        .to('.work__feature', {
+          yPercent: -50,
+          duration: 100,
+        })
+    }
+
+    function workMain() {
+      const workMainTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".work__menu",
+          start: "top bottom",
+          // end: "bottom bottom",
+          pin: false,
+          scrub: 1,
+          markers: false,
+        },
+      });
+
+      workMainTl.to('.work__menu', {
+        yPercent: -100,
+        duration: 50,
+      })
     }
 
     function skill() {
       const skillTl = gsap.timeline({
         scrollTrigger: {
-          trigger: ".skill",
+          trigger: ".work__menu",
           start: "top bottom",
-          end: "bottom top",
-          scrub: 0,
+          end: "center bottom",
+          scrub: 1,
           markers: false,
         },
       });
 
-      skillTl
-      
-      .to(".skill__ttl", {
+      skillTl.to(".skill__ttl", {
         visibility: "visible",
       });
     }
@@ -1800,7 +1840,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // end: 'bottom top',
           pin: true,
           pinSpacing: false,
-          scrub: 0,
+          scrub: 1,
           markers: false,
         },
       });
@@ -1811,20 +1851,19 @@ document.addEventListener("DOMContentLoaded", function () {
         })
 
         .set(".row__right", {
-          xPercent: -240,
+          xPercent: -100,
         })
 
         .to(".skill__ttl", {
           opacity: 0,
           pointerEvents: "none",
-          duration: 4,
         })
 
         .to(
           ".row__left",
           {
-            xPercent: -240,
-            duration: 3,
+            xPercent: -100,
+            duration: 5,
           },
           "same"
         )
@@ -1833,7 +1872,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ".row__right",
           {
             xPercent: 100,
-            duration: 3,
+            duration: 5,
           },
           "same"
         );
@@ -1846,8 +1885,9 @@ document.addEventListener("DOMContentLoaded", function () {
           start: "top top",
           // end: 'bottom top',
           pin: true,
-          scrub: 0,
-          markers: false,
+          pinSpacing: false,
+          scrub: 1,
+          markers: true,
         },
       });
 
@@ -1865,9 +1905,12 @@ document.addEventListener("DOMContentLoaded", function () {
           autoAlpha: 0,
         })
 
+
+
         .to(".skill__message", {
           scaleX: 1,
           duration: 4,
+          delay: 2,
         })
 
         .to(".skill__sub", {
@@ -1878,7 +1921,32 @@ document.addEventListener("DOMContentLoaded", function () {
         .to(".skill__note", {
           autoAlpha: 1,
           duration: 3,
-        });
+        })
+
+        .to('.skill__message', {
+          yPercent: -100,
+          duration: 10,
+        }, 'same')
+        ;
+    }
+
+    function skillUp() {
+      const skillUpTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".skill__message",
+          start: "bottom top",
+          // end: "bottom bottom",
+          pin: false,
+          // pinSpacing: false,
+          scrub: 1,
+          markers: false,
+        },
+      });
+
+      skillUpTl.to('.skill__menu', {
+        yPercent: -100,
+        duration: 10,
+      }, 'same')
     }
 
     function profileIntro() {
@@ -1889,7 +1957,7 @@ document.addEventListener("DOMContentLoaded", function () {
           end: "bottom bottom",
           pin: true,
           // pinSpacing: false,
-          scrub: 0,
+          scrub: 1,
           markers: false,
         },
       });
@@ -1903,7 +1971,7 @@ document.addEventListener("DOMContentLoaded", function () {
           position: "fixed",
           top: 0,
           left: 0,
-          zIndex: 2,
+          // zIndex: 2,
         })
 
         .set(
@@ -2128,9 +2196,11 @@ document.addEventListener("DOMContentLoaded", function () {
       .add(introCube())
       .add(workIntro())
       .add(workFeature())
+      .add(workMain())
       .add(skill())
       .add(skillIntro())
       .add(skillMain())
+      .add(skillUp())
       .add(profileIntro())
       .add(outro());
   }
