@@ -1,15 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
 
-  // const scroll = document.getElementById('scroll');
-  // const main = document.getElementById('main');
+  const scroll = document.getElementById('scroll');
+  const main = document.getElementById('main');
 
-  // window.addEventListener('scroll', function(){
-  //   main.classList.add('noScroll');
-  //   scroll.classList.add('isRisen');
-  // });
 
-  //header show/hide
+  //scroll
+  window.addEventListener('scroll', function(){
+    main.classList.add('noScroll');
+    scroll.classList.add('isRisen');
+  });
+
+
+  //header
   window.addEventListener("scroll", function () {
     const header = document.getElementById("header");
     const intro = document.getElementById("intro");
@@ -17,38 +20,85 @@ document.addEventListener("DOMContentLoaded", function () {
     const headerHeight = header.offsetHeight;
     let introHeight = intro.clientHeight;
 
+    //header show/hide
     if (ST >= introHeight) {
       header.classList.add("showHeader");
     } else {
       header.classList.remove("showHeader");
     }
 
+    //PCver Only
     if (window.matchMedia("(min-width: 1024px)").matches) {
-
-    const feature = document.getElementById('work__feature');
-    const featureRect = feature.getBoundingClientRect();
-    // const featureY = featureRect.top;
-    const featureX = featureRect.left;
-    const feature0 = 0;
-
+      
+      const feature = document.getElementById('work__feature');
+      const featureRect = feature.getBoundingClientRect();
+      const featureX = featureRect.left;
+      const feature0 = 0;
+      
+      //Work feature header color change
     if (featureX === feature0) {
-      header.classList.add('transparentHeader');
+      header.classList.add('beigeHeader');
     } else {
-      header.classList.remove('transparentHeader');
+      header.classList.remove('beigeHeader');
     }
     
 
-    const workMenu = document.getElementById('work__menu');
+    const workMenu = document.getElementById
+    ('work__menu');
     const menuRect = workMenu.getBoundingClientRect();
-    const menuY = menuRect.top;
-    const headerBottom = headerHeight;
+    const menuTop = menuRect.top;
+    const menuBottom = menuRect.bottom;
+    const menuHeight = workMenu.offsetHeight;
 
-    // console.log(menuoffY);
-
-    if (menuY <= headerBottom) {
+    //work menu header color change
+    if (menuTop <= headerHeight) {
       header.classList.add('bgChange');
     } else {
       header.classList.remove('bgChange');
+    }
+
+    //header color reset
+    if (menuBottom <= headerHeight) {
+      header.classList.remove('bgChange', 'beigeHeader');
+    }
+
+
+    const message = document.getElementById('skill__message');
+    const messageStyle = message.style.transform;
+    const messageScale = messageStyle.match(/scale\(([^)]+)\)/);
+
+    //skill menu header color change
+    if (messageScale === null) {
+      header.classList.add('skillBg');
+    } else {
+      header.classList.remove('skillBg');
+    }
+
+
+    const skillMenu = document.getElementById('skill__menu');
+    const skillRect = skillMenu.getBoundingClientRect();
+    const skillBottom = skillRect.bottom;
+    
+    //header color reset
+    if (skillBottom <= headerHeight) {
+      header.classList.remove('skillBg')
+    }
+    
+    const detail = document.getElementById('profile__detail');
+    const detailRect = detail.getBoundingClientRect();
+    const detailBottom = detailRect.bottom;
+    const detailLeft = detailRect.left;
+    
+    //profile detail header color change
+    if (detailLeft >= -30 && detailBottom <= 1081) {
+      header.classList.add('profileBg');
+    } else {
+      header.classList.remove('profileBg');
+    }
+
+    //header color reset
+    if (detailBottom <= headerHeight) {
+      header.classList.remove('profileBg');
     }
   }
   });
@@ -1583,7 +1633,7 @@ document.addEventListener("DOMContentLoaded", function () {
             yPercent: 0,
             duration: 10,
           },
-          "same2+=9"
+          "same2+=10"
         )
 
         .fromTo(
@@ -1603,14 +1653,13 @@ document.addEventListener("DOMContentLoaded", function () {
           ".intro__box",
           {
             yPercent: -100,
-            duration: 50,
-          },
-          ">3"
-          );
-
-
+            duration: 10,
+            delay: 3,
+          }
+          )
+        
+          ;
     }
-
 
     function introCube() {
       const cubeTl = gsap.timeline({
@@ -1661,7 +1710,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .to(".intro__wrap", {
           yPercent: -100,
           duration: 50,
-          delay: 10,
+          delay: 5,
         });
     }
 
@@ -1722,16 +1771,18 @@ document.addEventListener("DOMContentLoaded", function () {
         zIndex: 15,
         transformOrigin: 'center center',
         scale: 4,
-        })
+      })
 
         .set('.work__logo', {
           bottom: "30%",
           left: '15%',
-
         })
 
         .set('.work__feature', {
           xPercent: 100,
+          position: 'fixed',
+          top: 0,
+          left: 0,
         })
 
 
@@ -1740,62 +1791,78 @@ document.addEventListener("DOMContentLoaded", function () {
           ".work__feature",
           {
             xPercent: 0,
-            duration: 50,
-          }, 'same1'
+            duration: 10,
+          }
+          , 'same1'
           )
 
           .to(
             ".work__logo",
             {
               translateX: 0,
-              duration: 80,
-            },
-            "same1+=6"
+              duration: 10,
+            }
+            ,"same1+=5"
             )
 
             .to('.work__left', {
               width: '50%',
-              duration: 50,
-            }, 'same1+=6')
+              duration: 10,
+            }
+            , 'same1+=6'
+            )
   
             .to('.work__right', {
               width: '50%',
-              duration: 50,
-            }, 'same1+=8')
+              duration: 10,
+            }
+            , 'same1+=8'
+            )
 
             .set(".header", {
               zIndex: 11,
-            },'same2')
+            }
+            ,'same2'
+            )
 
             .set(".work__intro", {
               zIndex: 0,
-            },'same2')
+            }
+            ,'same2'
+            )
 
             .to('.work__cover', {
             scale: 1,
-            duration: 100,
-            // delay: 5,
-          }, 'same3')
+            duration: 10,
+          }
+          , 'same3'
+          )
                       
           .to('.work__logo', {
             bottom: "7%",
             left: '3%',
-            duration: 50,
-          }, 'same3')
+            duration: 10,
+          }
+          , 'same3'
+          )
 
           .set('.header', {
             zIndex: 100,
-          },'same4')
+          }
+          ,'same4'
+          )
+
 
         .to('.work__unit', {
           xPercent: -70,
-          duration: 200,
-        })
-
+          duration: 20,
+          delay: 1,
+        }, 'same5')
+        
         .to('.work__feature', {
-          yPercent: -50,
-          duration: 100,
-        })
+          yPercent: -20,
+          duration: 20,
+        });
     }
 
     function workMain() {
@@ -1885,9 +1952,9 @@ document.addEventListener("DOMContentLoaded", function () {
           start: "top top",
           // end: 'bottom top',
           pin: true,
-          pinSpacing: false,
+          // pinSpacing: false,
           scrub: 1,
-          markers: true,
+          markers: false,
         },
       });
 
@@ -1923,31 +1990,36 @@ document.addEventListener("DOMContentLoaded", function () {
           duration: 3,
         })
 
-        .to('.skill__message', {
-          yPercent: -100,
-          duration: 10,
-        }, 'same')
+        // .to('.skill__message', {
+        //   yPercent: -100,
+        //   duration: 10,
+        // }, 'same')
+
+        // .to('.skill__menu', {
+        //   yPercent: -100,
+        //   duration: 10,
+        // }, 'same2')
         ;
     }
 
-    function skillUp() {
-      const skillUpTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".skill__message",
-          start: "bottom top",
-          // end: "bottom bottom",
-          pin: false,
-          // pinSpacing: false,
-          scrub: 1,
-          markers: false,
-        },
-      });
+    // function skillUp() {
+    //   const skillUpTl = gsap.timeline({
+    //     scrollTrigger: {
+    //       trigger: ".skill__menu",
+    //       start: "top bottom",
+    //       // end: "bottom bottom",
+    //       pin: false,
+    //       // pinSpacing: false,
+    //       scrub: 1,
+    //       markers: false,
+    //     },
+    //   });
 
-      skillUpTl.to('.skill__menu', {
-        yPercent: -100,
-        duration: 10,
-      }, 'same')
-    }
+    //   skillUpTl.to('.skill__menu', {
+    //     yPercent: -100,
+    //     duration: 10,
+    //   }, 'same')
+    // }
 
     function profileIntro() {
       const profileIntro = gsap.timeline({
@@ -1956,7 +2028,6 @@ document.addEventListener("DOMContentLoaded", function () {
           start: "top top",
           end: "bottom bottom",
           pin: true,
-          // pinSpacing: false,
           scrub: 1,
           markers: false,
         },
@@ -1965,13 +2036,13 @@ document.addEventListener("DOMContentLoaded", function () {
       profileIntro
         .to(".profile__ttl", {
           autoAlpha: 0,
+          duration: 20,
         })
 
         .set(".profile__message", {
           position: "fixed",
           top: 0,
           left: 0,
-          // zIndex: 2,
         })
 
         .set(
@@ -1995,11 +2066,13 @@ document.addEventListener("DOMContentLoaded", function () {
         .to(".profile__lead", {
           yPercent: 0,
           autoAlpha: 1,
+          duration: 20,
         })
 
         .to(".profile__sub", {
           yPercent: 0,
           autoAlpha: 1,
+          duration: 20,
         })
 
         .set(".profile__detail", {
@@ -2010,21 +2083,31 @@ document.addEventListener("DOMContentLoaded", function () {
           xPercent: -100,
         })
 
-        .to(
-          ".profile__detail",
-          {
-            xPercent: 0,
-          },
-          "same2"
-        )
-
+        
         .to(
           ".profile__message",
           {
             xPercent: 100,
+            duration: 20,
           },
           "same2"
-        );
+
+          )
+          .to(
+            ".profile__detail",
+            {
+              xPercent: 0,
+              duration: 30,
+            },
+            "same2"
+            )
+        
+        .to('.profile__detail', {
+          yPercent: -100,
+          duration: 20,
+          delay: 5,
+        }, 'same3')
+        ;
     }
 
     function outro() {
@@ -2034,7 +2117,7 @@ document.addEventListener("DOMContentLoaded", function () {
           start: "top top",
           // end: 'bottom bottom',
           pin: true,
-          scrub: 0,
+          scrub: 1,
           markers: false,
         },
       });
@@ -2056,7 +2139,7 @@ document.addEventListener("DOMContentLoaded", function () {
             duration: 10,
             stagger: {
               from: "center",
-              each: 5,
+              each: 3,
             },
           },
           "first"
@@ -2071,7 +2154,7 @@ document.addEventListener("DOMContentLoaded", function () {
             duration: 10,
             stagger: {
               from: "center",
-              each: 5,
+              each: 3,
             },
           },
           "first+=5"
@@ -2086,7 +2169,7 @@ document.addEventListener("DOMContentLoaded", function () {
             duration: 10,
             stagger: {
               from: "center",
-              each: 5,
+              each: 3,
             },
           },
           "first+=5"
@@ -2101,7 +2184,7 @@ document.addEventListener("DOMContentLoaded", function () {
             duration: 10,
             stagger: {
               from: "center",
-              each: 5,
+              each: 3,
             },
           },
           "first+=10"
@@ -2116,7 +2199,7 @@ document.addEventListener("DOMContentLoaded", function () {
             duration: 10,
             stagger: {
               from: "center",
-              each: 5,
+              each: 3,
             },
           },
           "first+=10"
@@ -2126,17 +2209,20 @@ document.addEventListener("DOMContentLoaded", function () {
           transformOrigin: "center center",
         })
 
+        
+
         .to(
-          ".outro__letter--col2",
+          ".outro__letter--col1",
           {
             scale: 0,
             duration: 20,
+            delay: 3,
           },
           "second"
         )
 
         .to(
-          ".outro__letter--col3",
+          ".outro__letter--col2",
           {
             scale: 0,
             duration: 20,
@@ -2145,7 +2231,7 @@ document.addEventListener("DOMContentLoaded", function () {
         )
 
         .to(
-          ".outro__letter--col4",
+          ".outro__letter--col3",
           {
             scale: 0,
             duration: 20,
@@ -2154,7 +2240,7 @@ document.addEventListener("DOMContentLoaded", function () {
         )
 
         .to(
-          ".outro__letter--col5",
+          ".outro__letter--col4",
           {
             scale: 0,
             duration: 20,
@@ -2163,7 +2249,7 @@ document.addEventListener("DOMContentLoaded", function () {
         )
 
         .to(
-          ".outro__letter--col6",
+          ".outro__letter--col5",
           {
             scale: 0,
             duration: 20,
@@ -2172,7 +2258,7 @@ document.addEventListener("DOMContentLoaded", function () {
         )
 
         .to(
-          ".outro__letter--col7",
+          ".outro__letter--col6",
           {
             scale: 0,
             duration: 20,
@@ -2181,13 +2267,37 @@ document.addEventListener("DOMContentLoaded", function () {
         )
 
         .to(
-          ".outro__letter--col8",
+          ".outro__letter--col7",
           {
             scale: 0,
             duration: 20,
           },
           "second+=60"
-        );
+        )
+
+        .to(
+          ".outro__letter--col8",
+          {
+            scale: 0,
+            duration: 20,
+          },
+          "second+=70"
+        )
+
+        .to(
+          ".outro__letter--col9",
+          {
+            scale: 0,
+            duration: 20,
+          },
+          "second+=80"
+        )
+
+        .to('.outro', {
+          yPercent: -100,
+          duration: 20,
+        })
+        ;
     }
 
     const master = gsap.timeline();
@@ -2196,12 +2306,13 @@ document.addEventListener("DOMContentLoaded", function () {
       .add(introCube())
       .add(workIntro())
       .add(workFeature())
-      .add(workMain())
+      .add(workMain(), '<')
       .add(skill())
       .add(skillIntro())
       .add(skillMain())
-      .add(skillUp())
+      // .add(skillUp())
       .add(profileIntro())
-      .add(outro());
+      .add(outro())
+      ;
   }
 });

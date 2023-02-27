@@ -19,6 +19,16 @@
 
 <body id="top">
   <div class="wrapper">
+    <div id="scroll" class="scroll">
+      <p class="scroll__txt">Scroll to explore Action</p>
+      <p class="scroll__arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="8" viewBox="0 0 14.828 8.414">
+          <path id="arrow" d="M21,18l6,6-6,6" transform="translate(31.414 -19.586) rotate(90)" fill="none"
+            stroke="#272727" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+        </svg>
+      </p>
+    </div>
+
     <header id="header" class="header">
       <p class="header__ttl">
         <svg class="header__logo" xmlns="http://www.w3.org/2000/svg" width="53.32" height="56.875"
@@ -76,15 +86,7 @@
         <span id="btn__bottom" class="btn__bottom"></span>
       </div>
     </header>
-    <!-- <div id="scroll" class="scroll">
-        <p class="scroll__txt">Scroll to explore Action</p>
-        <p class="scroll__arrow">
-          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="8" viewBox="0 0 14.828 8.414">
-            <path id="arrow" d="M21,18l6,6-6,6" transform="translate(31.414 -19.586) rotate(90)" fill="none"
-              stroke="#272727" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-          </svg>
-        </p>
-      </div> -->
+
     <main id="main" class="main">
 
       <section id="intro" class="intro">
@@ -819,7 +821,7 @@
             <p class="skill__note">半年間で学習したことや、持っているスキルをご紹介します。</p>
           </div>
 
-          <ul class="skill__menu">
+          <ul id="skill__menu" class="skill__menu">
             <li class="skill__item">
               <p class="skill__pic"><img src="images/skill/html.svg" alt="HTMLアイコン" class="skill__icon"></p>
               <p class="skill__name">HTML LS</p>
@@ -910,7 +912,7 @@
           <p class="profile__sub">私自身についてご紹介します。</p>
         </div>
 
-        <div class="profile__detail">
+        <div id="profile__detail" class="profile__detail">
           <p class="profile__pic"><img src="images/work/1.png" alt="自分の写真" class="profile__img"></p>
           <div class="profile__container">
             <p class="profile__cat">Profile</p>
