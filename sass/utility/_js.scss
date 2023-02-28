@@ -2,6 +2,11 @@
 
 #top {
 
+    .rotateLoad {
+        transform: translateY(-5px);
+        opacity: 0;
+    }
+
     .showHeader {
         transform: translateY(0);
         visibility: visible;
