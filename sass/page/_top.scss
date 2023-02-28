@@ -48,6 +48,7 @@
         justify-content: center;
         align-items: center;
         margin-bottom: 85vh;
+        background: $white;
 
         @media screen and (min-width: 1024px) {
             //   margin-bottom: 90vh;
@@ -614,6 +615,11 @@
         &__svg {
             @include img;
         }
+        
+        &__linkicon {
+            @include img;
+
+        }
 
         &__cat {
             color: $gray;
@@ -644,7 +650,6 @@
 
             @media screen and (min-width: 1024px) {
                 @include ttl($fz: 128px);
-                // visibility: visible;
             }
         }
 

@@ -1,5 +1,0 @@
-body --- header(100)	--- 
-     --- main	--- scroll(50) ---
-			--- .work__intro(10)
-			--- .work__feature(20)
-     --- footer
