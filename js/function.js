@@ -114,11 +114,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const detail = document.getElementById("profile__detail");
       const detailRect = detail.getBoundingClientRect();
+      const detailTop = detailRect.top;
       const detailBottom = detailRect.bottom;
       const detailLeft = detailRect.left;
 
       //profile detail header color change
-      if (detailLeft >= -30 && detailBottom <= 1081) {
+      if (detailLeft >= -30 && detailTop <= 1) {
         header.classList.add("profileBg");
       } else {
         header.classList.remove("profileBg");
