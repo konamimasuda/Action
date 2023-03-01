@@ -25,6 +25,26 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollUp.classList.add("isRisen");
   });
 
+
+  //reload
+  let deviceFlag;
+  if (window.innerWidth < 768) {
+    deviceFlag = "sp";
+  } else if (window.innerWidth < 1024) {
+    deviceFlag = "tablet";
+  } else {
+    deviceFlag = "pc";
+  }
+  window.addEventListener('resize', () => {
+    if (window.innerWidth < 768) {
+      deviceFlag !== "sp" && window.location.reload();
+    } else if (window.innerWidth < 1024) {
+      deviceFlag !== "tablet" && window.location.reload();
+    } else {
+      deviceFlag !== "pc" && window.location.reload();
+    }
+   })
+
   //header
   window.addEventListener("scroll", function () {
     const header = document.getElementById("header");

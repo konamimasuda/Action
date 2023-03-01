@@ -80,9 +80,7 @@
         margin-bottom: 85vh;
         background: $white;
 
-        @media screen and (min-width: 1024px) {
-            //   margin-bottom: 90vh;
-        }
+        @media screen and (min-width: 1024px) {}
 
         &__box {
             z-index: 10;
@@ -134,9 +132,8 @@
             height: 100%;
 
             @media screen and (min-width: 1024px) {
-                width: auto;
                 height: 100vh;
-                margin-top: 20vh;
+                margin-top: 40vh;
             }
 
         }
@@ -173,18 +170,20 @@
 
             @media screen and (min-width: 1024px) {
                 justify-content: space-around;
+                gap: 0;
                 width: fit-content;
-                height: 100vh;
-                padding: 0 10px;
+                height: fit-content;
+                padding: 10px;
             }
         }
 
+        
         &__front {
             background: $white;
             transform: translateZ(36vw);
 
             @media screen and (min-width: 1024px) {
-                transform: translateZ(20vw);
+                transform: translateZ(26vw);
             }
         }
 
@@ -193,7 +192,15 @@
             transform: rotateY(90deg) translateZ(36vw);
 
             @media screen and (min-width: 1024px) {
-                transform: rotateY(90deg) translateZ(20vw);
+                transform: rotateY(90deg) translateZ(26vw);
+            }
+        }
+
+        &__letter,
+        &__letter--front,
+        &__letter--side {
+            @media screen and (min-width: 1024px) {
+                font-size: 73%;
             }
         }
 
@@ -202,10 +209,6 @@
             font-size: 9vw;
             font-weight: 700;
             line-height: 1.2;
-
-            @media screen and (min-width: 1024px) {
-                font-size: 5vw;
-            }
         }
     }
 
@@ -586,7 +589,7 @@
 
             @media screen and (min-width: 1024px) {
                 transition: ease-in-out .4s;
-              
+
                 &:hover {
                     opacity: .7;
                 }
@@ -645,7 +648,7 @@
         &__svg {
             @include img;
         }
-        
+
         &__linkicon {
             @include img;
 
@@ -849,10 +852,10 @@
     .profile {
 
         margin-bottom: -200vh;
-        
+
         @media screen and (min-width: 1024px) {
             margin-bottom: -300vh;
-          
+
         }
 
         &__ttl {
@@ -1139,7 +1142,7 @@
 
             @media screen and (min-width: 1024px) {
                 margin-bottom: 24px;
-              font-size: 72px;
+                font-size: 72px;
             }
         }
 
@@ -1154,7 +1157,7 @@
             }
 
             @media screen and (min-width: 1024px) {
-              font-size: 72px;
+                font-size: 72px;
             }
         }
 
@@ -1185,7 +1188,7 @@
         }
 
         @media screen and (min-width: 1024px) {
-          width: 34.9vw;
+            width: 34.9vw;
         }
 
         &__box {
