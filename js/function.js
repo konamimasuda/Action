@@ -1,20 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
 
-  const bar = new ProgressBar.Line(loading__bar, {
-    strokeWidth: 4,
-    easing: "easeInOut",
-    duration: 1400,
-    color: "#272727",
-    trailColor: "#D4D4D4",
-    trailWidth: 2,
-    svgStyle: { width: "100%", height: "100%" },
-  });
 
-  bar.animate(1.0, function () {
-    $("#loading").fadeOut();
-    $("#top").removeClass("fixed");
-  });
+    const bar = new ProgressBar.Line(loading__bar, {
+      strokeWidth: 4,
+      easing: "easeInOut",
+      duration: 1400,
+      color: "#fafafa",
+      trailColor: "#D4D4D4",
+      trailWidth: 2,
+      svgStyle: { width: "100%", height: "100%" },
+    });
+  
+    bar.animate(1.0, function () {
+      $("#loading").fadeOut();
+      $("#top").removeClass("fixed");
+    });
+
 
   //scroll
   const scrollUp = document.getElementById("scroll");
