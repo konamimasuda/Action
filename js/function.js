@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   bar.animate(1.0, function () {
     $("#loading").fadeOut();
-    $('#top').removeClass('fixed');
+    $("#top").removeClass("fixed");
   });
 
   //scroll
@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollUp.classList.add("isRisen");
   });
 
-
   //reload
   let deviceFlag;
   if (window.innerWidth < 768) {
@@ -35,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     deviceFlag = "pc";
   }
-  window.addEventListener('resize', function() {
+  window.addEventListener("resize", function () {
     if (window.innerWidth < 768) {
       deviceFlag !== "sp" && window.location.reload();
     } else if (window.innerWidth < 1024) {
@@ -43,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       deviceFlag !== "pc" && window.location.reload();
     }
-   })
+  });
 
   //header
   window.addEventListener("scroll", function () {
@@ -193,7 +192,6 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: ".intro__box",
           start: "top top",
-          // end: 'bottom top',
           pin: true,
           scrub: 1,
           markers: false,
@@ -266,7 +264,6 @@ document.addEventListener("DOMContentLoaded", function () {
           },
           "same1"
         )
-
         .to(
           ".intro__a",
           {
@@ -277,7 +274,6 @@ document.addEventListener("DOMContentLoaded", function () {
           },
           "same2"
         )
-
         .to(
           ".intro__c",
           {
@@ -288,7 +284,6 @@ document.addEventListener("DOMContentLoaded", function () {
           },
           "same2+=1"
         )
-
         .to(
           ".intro__t",
           {
@@ -299,7 +294,6 @@ document.addEventListener("DOMContentLoaded", function () {
           },
           "same2+=2"
         )
-
         .to(
           ".intro__i",
           {
@@ -310,7 +304,6 @@ document.addEventListener("DOMContentLoaded", function () {
           },
           "same2+=3"
         )
-
         .to(
           ".intro__o",
           {
@@ -526,7 +519,6 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: ".skill__intro",
           start: "top top",
-          // end: 'bottom top',
           pin: true,
           pinSpacing: false,
           scrub: 0,
@@ -573,7 +565,6 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: ".skill__main",
           start: "top top",
-          // end: 'bottom top',
           pin: true,
           scrub: 0,
           markers: false,
@@ -617,7 +608,6 @@ document.addEventListener("DOMContentLoaded", function () {
           start: "top top",
           end: "bottom bottom",
           pin: true,
-          // pinSpacing: false,
           scrub: 0,
           markers: false,
         },
@@ -693,7 +683,6 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: ".outro",
           start: "top top",
-          // end: 'bottom bottom',
           pin: true,
           scrub: 0,
           markers: false,
@@ -853,7 +842,6 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: ".intro__box",
           start: "top top",
-          // end: 'bottom top',
           pin: true,
           scrub: 1,
           markers: false,
@@ -1233,7 +1221,6 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: ".skill__main",
           start: "top top",
-          // end: 'bottom top',
           pin: true,
           scrub: 0,
           markers: false,
@@ -1277,7 +1264,6 @@ document.addEventListener("DOMContentLoaded", function () {
           start: "top top",
           end: "bottom bottom",
           pin: true,
-          // pinSpacing: false,
           scrub: 0,
           markers: false,
         },
@@ -1353,7 +1339,6 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: ".outro",
           start: "top top",
-          // end: 'bottom bottom',
           pin: true,
           scrub: 0,
           markers: false,
@@ -1529,7 +1514,6 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: ".intro__box",
           start: "top top",
-          // end: 'bottom top',
           pin: true,
           pinSpacing: false,
           scrub: 1,
@@ -1776,7 +1760,6 @@ document.addEventListener("DOMContentLoaded", function () {
           start: "top top",
           end: "bottom top",
           pin: true,
-          // pinSpacing: false,
           scrub: 1,
           markers: false,
         },
@@ -1909,7 +1892,6 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: ".work__menu",
           start: "top bottom",
-          // end: "bottom bottom",
           pin: false,
           scrub: 1,
           markers: false,
@@ -1943,7 +1925,6 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: ".skill__intro",
           start: "top top",
-          // end: 'bottom top',
           pin: true,
           pinSpacing: false,
           scrub: 1,
@@ -2024,36 +2005,7 @@ document.addEventListener("DOMContentLoaded", function () {
           autoAlpha: 1,
           duration: 3,
         });
-
-      // .to('.skill__message', {
-      //   yPercent: -100,
-      //   duration: 10,
-      // }, 'same')
-
-      // .to('.skill__menu', {
-      //   yPercent: -100,
-      //   duration: 10,
-      // }, 'same2')
     }
-
-    // function skillUp() {
-    //   const skillUpTl = gsap.timeline({
-    //     scrollTrigger: {
-    //       trigger: ".skill__menu",
-    //       start: "top bottom",
-    //       // end: "bottom bottom",
-    //       pin: false,
-    //       // pinSpacing: false,
-    //       scrub: 1,
-    //       markers: false,
-    //     },
-    //   });
-
-    //   skillUpTl.to('.skill__menu', {
-    //     yPercent: -100,
-    //     duration: 10,
-    //   }, 'same')
-    // }
 
     function profileIntro() {
       const profileIntro = gsap.timeline({
@@ -2150,7 +2102,6 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: ".outro",
           start: "top top",
-          // end: 'bottom bottom',
           pin: true,
           scrub: 1,
           markers: false,
