@@ -773,13 +773,13 @@
                 display: flex;
                 flex-wrap: wrap;
             }
-            
+
             @media screen and (min-width: 900px) {
                 justify-content: space-between;
                 row-gap: 32px;
                 padding: 17% 4%;
             }
-            
+
             @media screen and (min-width: 1200px) {
                 row-gap: 40px;
                 padding: 10% 8.3vw;
@@ -969,7 +969,7 @@
                 padding: calc(114px + 5%) 12.5vw 5%;
             }
         }
-        
+
         &__box {
             @media screen and (min-width: 1024px) {
                 position: relative;
@@ -990,7 +990,7 @@
 
                 position: absolute;
                 top: 50%;
-                right: 0;
+                right: -5%;
                 z-index: -1;
                 transform: translateY(-50%);
             }
@@ -1002,9 +1002,7 @@
         }
 
         &__container {
-            @media screen and (min-width: 1024px) {
-              
-            }
+            @media screen and (min-width: 1024px) {}
         }
 
         &__cat {
@@ -1171,6 +1169,8 @@
     }
 
     .contact {
+        position: relative;
+        z-index: 20;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1323,6 +1323,15 @@
                 width: 235px;
                 height: 60px;
                 font-size: 18px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                transition: ease-in-out .2s;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: .8;
+                }
             }
         }
     }

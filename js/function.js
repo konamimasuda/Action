@@ -2075,7 +2075,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ".profile__message",
           {
             xPercent: 100,
-            duration: 20,
+            duration: 100,
           },
           "same2"
         )
@@ -2083,20 +2083,22 @@ document.addEventListener("DOMContentLoaded", function () {
           ".profile__detail",
           {
             xPercent: 0,
-            duration: 30,
+            duration: 100,
+            ease: "power1.out",
           },
           "same2"
-        )
-
+          )
         .to(
           ".profile__detail",
           {
             yPercent: -100,
-            duration: 20,
-            delay: 5,
+            duration: 100,
+            ease: "power1.in",
+            delay: 50,
           },
           "same3"
-        );
+          )
+        ;
     }
 
     function outro() {
@@ -2291,11 +2293,10 @@ document.addEventListener("DOMContentLoaded", function () {
       .add(introCube())
       .add(workIntro())
       .add(workFeature())
-      .add(workMain(), "<")
+      .add(workMain())
       .add(skill())
       .add(skillIntro())
       .add(skillMain())
-      // .add(skillUp())
       .add(profileIntro())
       .add(outro());
   }
