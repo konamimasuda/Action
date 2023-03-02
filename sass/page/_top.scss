@@ -259,14 +259,13 @@
             }
 
             @media screen and (min-width: 768px) {
-                width: 35vw;
-                height: 198px;
+                width: 38vw;
                 box-shadow: 12px 12px 24px rgba(39, 39, 39, 0.2);
             }
 
             @media screen and (min-width: 1024px) {
-                width: 500px;
-                height: 290px;
+                width: 26vw;
+                height: fit-content;
 
                 &:nth-of-type(3n) {
                     justify-self: center;
@@ -359,13 +358,13 @@
             box-shadow: 8px 8px 24px rgba(39, 39, 39, 0.2);
 
             @media screen and (min-width: 768px) {
-                width: 28vw;
+                width: 25vw;
+                height: fit-content;
                 box-shadow: 12px 12px 24px rgba(39, 39, 39, 0.2);
             }
 
             @media screen and (min-width: 1024px) {
-                width: 280px;
-                height: 240px;
+                width: 14.6vw;
 
                 &:nth-of-type(even) {
                     align-self: flex-end
@@ -437,8 +436,10 @@
 
             @media screen and (min-width: 1024px) {
                 flex-shrink: 0;
-                width: 796px;
-                height: 447px;
+                // width: 796px;
+                width: 41.45vw;
+                // height: 447px;
+                height: fit-content;
                 box-shadow: 16px 16px 42px rgba(39, 39, 39, 0.2);
 
                 &:nth-of-type(odd) {
@@ -465,8 +466,8 @@
 
             @media screen and (min-width: 1024px) {
                 top: 0;
-                width: 796px;
-                height: 447px;
+                width: 41.45vw;
+                height: fit-content;
             }
         }
 
@@ -518,11 +519,11 @@
 
             @media screen and (min-width: 1024px) {
                 position: fixed;
-                bottom: 130px;
+                bottom: 12vh;
                 left: 50%;
                 z-index: 1;
                 padding: 0;
-                font-size: 55px;
+                font-size: 2.86vw;
                 transform: translateX(-50%);
             }
         }
@@ -535,8 +536,8 @@
             display: none;
 
             @media screen and (min-width: 1024px) {
-                bottom: 50px;
-                right: 50px;
+                bottom: 6vh;
+                right: 2.6vw;
                 display: block;
                 z-index: 1;
 
@@ -566,7 +567,7 @@
             }
 
             @media screen and (min-width: 1024px) {
-                gap: 3vw;
+                // gap: 3vw;
                 margin-top: 25vh;
                 padding: 10% 4.1vw;
             }
@@ -576,11 +577,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-
+            
             &:not(:last-of-type) {
                 margin-bottom: 25px;
             }
-
+            
             @media screen and (min-width: 768px) {
                 &:not(:last-of-type) {
                     margin-bottom: 0px;
@@ -683,6 +684,7 @@
 
             @media screen and (min-width: 1024px) {
                 @include ttl($fz: 128px);
+                padding-top: 114px;
             }
         }
 
@@ -699,7 +701,7 @@
             }
 
             @media screen and (min-width: 1024px) {
-                padding: 204px 0 90px;
+                padding: calc(114px + 5%) 0 5%;
                 margin-top: -150vh;
             }
         }
@@ -777,7 +779,6 @@
 
             @media screen and (min-width: 1024px) {
                 gap: 80px;
-                // margin-top: -100px;
                 padding: 10% 8.3vw;
             }
         }
@@ -868,6 +869,7 @@
 
             @media screen and (min-width: 1024px) {
                 @include ttl($fz: 128px);
+                padding-top: 114px;
             }
         }
 
@@ -1101,7 +1103,6 @@
                 &:not(:nth-of-type(n+2):nth-of-type(-n+8)) {
                     display: block;
                 }
-
             }
         }
 
@@ -1143,10 +1144,11 @@
 
             @media screen and (min-width: 1024px) {
                 margin-bottom: 24px;
-                font-size: 72px;
+                font-size: 3.75vw;
+                // font-size: 72px;
             }
         }
-
+        
         &__ttl {
             margin-bottom: 16px;
             font-size: 32px;
@@ -1156,9 +1158,10 @@
                 margin-bottom: 26px;
                 font-size: 64px;
             }
-
+            
             @media screen and (min-width: 1024px) {
-                font-size: 72px;
+                font-size: 3.75vw;
+                // font-size: 72px;
             }
         }
 
@@ -1190,6 +1193,7 @@
 
         @media screen and (min-width: 1024px) {
             width: 34.9vw;
+            min-width: 500px;
         }
 
         &__box {

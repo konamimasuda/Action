@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     deviceFlag = "pc";
   }
-  window.addEventListener('resize', () => {
+  window.addEventListener('resize', function() {
     if (window.innerWidth < 768) {
       deviceFlag !== "sp" && window.location.reload();
     } else if (window.innerWidth < 1024) {
@@ -1953,11 +1953,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       skillIntroTl
         .set(".row__left", {
-          xPercent: 100,
+          xPercent: 200,
         })
 
         .set(".row__right", {
-          xPercent: -100,
+          xPercent: -200,
         })
 
         .to(".skill__ttl", {
@@ -1968,7 +1968,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .to(
           ".row__left",
           {
-            xPercent: -100,
+            xPercent: -200,
             duration: 5,
           },
           "same"
@@ -1977,7 +1977,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .to(
           ".row__right",
           {
-            xPercent: 100,
+            xPercent: 200,
             duration: 5,
           },
           "same"
@@ -1989,9 +1989,7 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: ".skill__main",
           start: "top top",
-          // end: 'bottom top',
           pin: true,
-          // pinSpacing: false,
           scrub: 1,
           markers: false,
         },
