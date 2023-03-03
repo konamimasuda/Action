@@ -1,22 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
 
+  const bar = new ProgressBar.Line(loading__bar, {
+    strokeWidth: 4,
+    easing: "easeInOut",
+    duration: 1400,
+    color: "#fafafa",
+    trailColor: "#D4D4D4",
+    trailWidth: 2,
+    svgStyle: { width: "100%", height: "100%" },
+  });
 
-    const bar = new ProgressBar.Line(loading__bar, {
-      strokeWidth: 4,
-      easing: "easeInOut",
-      duration: 1400,
-      color: "#fafafa",
-      trailColor: "#D4D4D4",
-      trailWidth: 2,
-      svgStyle: { width: "100%", height: "100%" },
-    });
-  
-    bar.animate(1.0, function () {
-      $("#loading").fadeOut();
-      $("#top").removeClass("fixed");
-    });
-
+  bar.animate(1.0, function () {
+    $("#loading").fadeOut();
+    $("#top").removeClass("fixed");
+  });
 
   //scroll
   const scrollUp = document.getElementById("scroll");
@@ -26,6 +24,28 @@ document.addEventListener("DOMContentLoaded", function () {
     main.classList.add("noScroll");
     scrollUp.classList.add("isRisen");
   });
+
+
+  //link smooth scroll
+  
+  // const gnavLink = document.querySelectorAll('a[href^="#"]');
+    
+  // gnavLink.forEach((gnavLink) => {
+  //     gnavLink.addEventListener('click', (e) => {
+  //         console.log(gnavLink);
+  //         e.preventDefault();
+  //         const hrefLink = gnavLink.getAttribute('href');
+  //         const targetContent = document.getElementById(hrefLink.replace('#', ''));
+  //         const rectTop = targetContent.getBoundingClientRect().top;
+  //         const positionY = window.pageYOffset;
+  //         const target = rectTop + positionY;
+
+  //         window.scrollTo({
+  //             top: target,
+  //             behavior: 'smooth',
+  //         });
+
+
 
   //reload
   let deviceFlag;
@@ -513,6 +533,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       skillTl.to(".skill__ttl", {
         visibility: "visible",
+        zIndex: 5,
       });
     }
 
@@ -529,25 +550,18 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       skillIntroTl
-        .set(".row__left", {
-          xPercent: 100,
-        })
-
-        .set(".row__right", {
-          xPercent: -380,
-        })
-
         .to(".skill__ttl", {
           opacity: 0,
           pointerEvents: "none",
-          duration: 4,
+          duration: 50,
         })
 
         .to(
           ".row__left",
           {
-            xPercent: -380,
-            duration: 3,
+            x: "-400vw",
+            duration: 100,
+            delay: 2,
           },
           "same"
         )
@@ -555,8 +569,9 @@ document.addEventListener("DOMContentLoaded", function () {
         .to(
           ".row__right",
           {
-            xPercent: 100,
-            duration: 3,
+            x: "370vw",
+            duration: 100,
+            delay: 2,
           },
           "same"
         );
@@ -1168,6 +1183,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       skillTl.to(".skill__ttl", {
         visibility: "visible",
+        zIndex: 5,
       });
     }
 
@@ -1176,7 +1192,6 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTrigger: {
           trigger: ".skill__intro",
           start: "top top",
-          // end: 'bottom top',
           pin: true,
           pinSpacing: false,
           scrub: 0,
@@ -1185,25 +1200,18 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       skillIntroTl
-        .set(".row__left", {
-          xPercent: 100,
-        })
-
-        .set(".row__right", {
-          xPercent: -240,
-        })
-
         .to(".skill__ttl", {
           opacity: 0,
           pointerEvents: "none",
-          duration: 4,
+          duration: 50,
         })
 
         .to(
           ".row__left",
           {
-            xPercent: -240,
-            duration: 3,
+            x: "-400vw",
+            duration: 100,
+            delay: 2,
           },
           "same"
         )
@@ -1211,8 +1219,9 @@ document.addEventListener("DOMContentLoaded", function () {
         .to(
           ".row__right",
           {
-            xPercent: 100,
-            duration: 3,
+            x: "370vw",
+            duration: 100,
+            delay: 2,
           },
           "same"
         );
@@ -1769,36 +1778,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
       featureTl
 
-        .set(".header", {
-          zIndex: 0,
-        })
-        .set(".work__intro", {
-          zIndex: -2,
-        })
-
-        .set(".work__cover", {
-          zIndex: 15,
-          transformOrigin: "center center",
-          scale: 4,
-        })
-
-        .set(".work__logo", {
-          bottom: "30%",
-          left: "15%",
-        })
-
         .set(".work__feature", {
           xPercent: 100,
-          position: "fixed",
-          top: 0,
-          left: 0,
         })
 
         .to(
           ".work__feature",
           {
             xPercent: 0,
-            duration: 10,
+            duration: 100,
           },
           "same1"
         )
@@ -1807,7 +1795,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ".work__logo",
           {
             translateX: 0,
-            duration: 10,
+            duration: 100,
           },
           "same1+=5"
         )
@@ -1816,7 +1804,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ".work__left",
           {
             width: "50%",
-            duration: 10,
+            duration: 100,
           },
           "same1+=6"
         )
@@ -1825,7 +1813,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ".work__right",
           {
             width: "50%",
-            duration: 10,
+            duration: 100,
           },
           "same1+=8"
         )
@@ -1838,19 +1826,11 @@ document.addEventListener("DOMContentLoaded", function () {
           "same2"
         )
 
-        .set(
-          ".work__intro",
-          {
-            zIndex: 0,
-          },
-          "same2"
-        )
-
         .to(
           ".work__cover",
           {
             scale: 1,
-            duration: 10,
+            duration: 100,
           },
           "same3"
         )
@@ -1860,7 +1840,7 @@ document.addEventListener("DOMContentLoaded", function () {
           {
             bottom: "7%",
             left: "3%",
-            duration: 10,
+            duration: 100,
           },
           "same3"
         )
@@ -1873,20 +1853,21 @@ document.addEventListener("DOMContentLoaded", function () {
           "same4"
         )
 
+        
         .to(
           ".work__unit",
           {
             xPercent: -70,
-            duration: 20,
-            delay: 1,
+            duration: 150,
+            delay: 50,
           },
           "same5"
-        )
+          )
 
-        .to(".work__feature", {
-          yPercent: -20,
-          duration: 20,
-        });
+          .to(".work__feature", {
+            yPercent: -10,
+            duration: 20,
+          });
     }
 
     function workMain() {
@@ -1902,7 +1883,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       workMainTl.to(".work__menu", {
         yPercent: -100,
-        duration: 50,
+        duration: 100,
       });
     }
 
@@ -1919,6 +1900,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       skillTl.to(".skill__ttl", {
         visibility: "visible",
+        zIndex: 5,
       });
     }
 
@@ -1935,24 +1917,18 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       skillIntroTl
-        .set(".row__left", {
-          xPercent: 200,
-        })
-
-        .set(".row__right", {
-          xPercent: -200,
-        })
-
         .to(".skill__ttl", {
           opacity: 0,
           pointerEvents: "none",
+          duration: 50,
         })
 
         .to(
           ".row__left",
           {
-            xPercent: -200,
-            duration: 5,
+            x: "-400vw",
+            duration: 500,
+            delay: 2,
           },
           "same"
         )
@@ -1960,8 +1936,9 @@ document.addEventListener("DOMContentLoaded", function () {
         .to(
           ".row__right",
           {
-            xPercent: 200,
-            duration: 5,
+            x: "370vw",
+            duration: 500,
+            delay: 2,
           },
           "same"
         );
@@ -1979,19 +1956,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       skillMainTl
-        .set(".skill__message", {
-          scaleX: 0,
-          transformOrigin: "center center",
-        })
-
-        .set(".skill__sub", {
-          autoAlpha: 0,
-        })
-
-        .set(".skill__note", {
-          autoAlpha: 0,
-        })
-
         .to(".skill__message", {
           scaleX: 1,
           duration: 4,
@@ -1999,12 +1963,12 @@ document.addEventListener("DOMContentLoaded", function () {
         })
 
         .to(".skill__sub", {
-          autoAlpha: 1,
+          opacity: 1,
           duration: 3,
         })
-
+        
         .to(".skill__note", {
-          autoAlpha: 1,
+          opacity: 1,
           duration: 3,
         });
     }
@@ -2087,7 +2051,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ease: "power1.out",
           },
           "same2"
-          )
+        )
         .to(
           ".profile__detail",
           {
@@ -2097,8 +2061,7 @@ document.addEventListener("DOMContentLoaded", function () {
             delay: 50,
           },
           "same3"
-          )
-        ;
+        );
     }
 
     function outro() {
@@ -2126,10 +2089,10 @@ document.addEventListener("DOMContentLoaded", function () {
             rotate: 0,
             xPercent: 0,
             yPercent: 0,
-            duration: 10,
+            duration: 150,
             stagger: {
               from: "center",
-              each: 3,
+              each: 40,
             },
           },
           "first"
@@ -2141,13 +2104,13 @@ document.addEventListener("DOMContentLoaded", function () {
             rotate: 0,
             xPercent: 0,
             yPercent: 0,
-            duration: 10,
+            duration: 150,
             stagger: {
               from: "center",
-              each: 3,
+              each: 40,
             },
           },
-          "first+=5"
+          "first+=75"
         )
 
         .to(
@@ -2156,13 +2119,13 @@ document.addEventListener("DOMContentLoaded", function () {
             rotate: 0,
             xPercent: 0,
             yPercent: 0,
-            duration: 10,
+            duration: 150,
             stagger: {
               from: "center",
-              each: 3,
+              each: 40,
             },
           },
-          "first+=5"
+          "first+=75"
         )
 
         .to(
@@ -2171,13 +2134,13 @@ document.addEventListener("DOMContentLoaded", function () {
             rotate: 0,
             xPercent: 0,
             yPercent: 0,
-            duration: 10,
+            duration: 150,
             stagger: {
               from: "center",
-              each: 3,
+              each: 40,
             },
           },
-          "first+=10"
+          "first+=150"
         )
 
         .to(
@@ -2186,13 +2149,13 @@ document.addEventListener("DOMContentLoaded", function () {
             rotate: 0,
             xPercent: 0,
             yPercent: 0,
-            duration: 10,
+            duration: 150,
             stagger: {
               from: "center",
-              each: 3,
+              each: 40,
             },
           },
-          "first+=10"
+          "first+=150"
         )
 
         .set(".outro__letter", {
@@ -2203,7 +2166,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ".outro__letter--col1",
           {
             scale: 0,
-            duration: 20,
+            duration: 200,
             delay: 3,
           },
           "second"
@@ -2213,77 +2176,77 @@ document.addEventListener("DOMContentLoaded", function () {
           ".outro__letter--col2",
           {
             scale: 0,
-            duration: 20,
+            duration: 200,
           },
-          "second+=10"
+          "second+=100"
         )
 
         .to(
           ".outro__letter--col3",
           {
             scale: 0,
-            duration: 20,
+            duration: 200,
           },
-          "second+=20"
+          "second+=200"
         )
 
         .to(
           ".outro__letter--col4",
           {
             scale: 0,
-            duration: 20,
+            duration: 200,
           },
-          "second+=30"
+          "second+=300"
         )
 
         .to(
           ".outro__letter--col5",
           {
             scale: 0,
-            duration: 20,
+            duration: 200,
           },
-          "second+=40"
+          "second+=400"
         )
 
         .to(
           ".outro__letter--col6",
           {
             scale: 0,
-            duration: 20,
+            duration: 200,
           },
-          "second+=50"
+          "second+=500"
         )
 
         .to(
           ".outro__letter--col7",
           {
             scale: 0,
-            duration: 20,
+            duration: 200,
           },
-          "second+=60"
+          "second+=600"
         )
 
         .to(
           ".outro__letter--col8",
           {
             scale: 0,
-            duration: 20,
+            duration: 200,
           },
-          "second+=70"
+          "second+=700"
         )
 
         .to(
           ".outro__letter--col9",
           {
             scale: 0,
-            duration: 20,
+            duration: 200,
           },
-          "second+=80"
+          "second+=800"
         )
 
         .to(".outro", {
           yPercent: -100,
-          duration: 20,
+          duration: 200,
         });
     }
 

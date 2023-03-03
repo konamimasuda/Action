@@ -20,6 +20,7 @@
     visibility: hidden;
 
     @media screen and (min-width: 1024px) {
+        z-index: 0;
         justify-content: none;
         height: 114px;
     }

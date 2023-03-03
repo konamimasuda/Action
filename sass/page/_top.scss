@@ -216,8 +216,11 @@
 
     .work {
 
+
         &__intro {
             position: relative;
+            z-index: -2;
+            background: $white;
         }
 
         &__front {
@@ -466,8 +469,11 @@
 
             @media screen and (min-width: 1024px) {
                 top: 0;
+                z-index: 15;
                 width: 41.45vw;
                 height: fit-content;
+                transform: scale(4);
+                transform-origin: center center;
             }
         }
 
@@ -498,6 +504,8 @@
             transform: translateX(210%);
 
             @media screen and (min-width: 1024px) {
+                bottom: 30%;
+                left: 15%;
                 width: 293px;
                 transform: translateX(100%);
             }
@@ -567,7 +575,7 @@
             }
 
             @media screen and (min-width: 1024px) {
-                margin-top: 25vh;
+                margin-top: 50vh;
                 padding: 10% 4.1vw;
             }
         }
@@ -675,7 +683,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 1;
+            z-index: -100;
             width: 100%;
             visibility: hidden;
 
@@ -696,6 +704,7 @@
             z-index: 5;
             height: 100vh;
             padding: 88px 0 30px;
+            overflow: hidden;
 
             @media screen and (min-width: 768px) {
                 padding: 118px 0 60px;
@@ -730,6 +739,8 @@
             height: 100vh;
             padding: 88px 0 30px;
             background: $bg-skill;
+            transform: scaleX(0);
+            transform-origin: center center;
         }
 
         &__sub {
@@ -739,6 +750,7 @@
             text-align: center;
             line-height: 1.35;
             color: $white;
+            opacity: 0;
 
             @media screen and (min-width: 768px) {
                 margin-bottom: 24px;
@@ -755,6 +767,7 @@
             font-size: 12px;
             text-align: center;
             color: $white;
+            opacity: 0;
 
             @media screen and (min-width: 768px) {
                 font-size: 17px;
@@ -783,6 +796,13 @@
             @media screen and (min-width: 1200px) {
                 row-gap: 40px;
                 padding: 10% 8.3vw;
+                
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 30%;
+                    max-width: 360px;
+                }
             }
         }
 
@@ -801,10 +821,11 @@
                 width: 50%;
                 margin-bottom: 40px;
             }
-
+            
             @media screen and (min-width: 900px) {
-                gap: 16px;
-                width: 30vw;
+                // gap: 8px;
+                width: 33%;
+                // width: 30vw;
                 margin-bottom: 0;
             }
 
@@ -884,6 +905,18 @@
             @media screen and (min-width: 1200px) {
                 font-size: 14px;
             }
+        }
+    }
+
+    .row {
+
+        &__left {
+            transform: translateX(100vw);
+        }
+        
+        &__right {
+            transform: translateX(-100vw);
+            align-self: flex-end;
         }
     }
 
