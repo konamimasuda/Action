@@ -32,18 +32,20 @@ document.addEventListener("DOMContentLoaded", function () {
     
   // gnavLink.forEach((gnavLink) => {
   //     gnavLink.addEventListener('click', (e) => {
-  //         console.log(gnavLink);
-  //         e.preventDefault();
-  //         const hrefLink = gnavLink.getAttribute('href');
-  //         const targetContent = document.getElementById(hrefLink.replace('#', ''));
-  //         const rectTop = targetContent.getBoundingClientRect().top;
-  //         const positionY = window.pageYOffset;
-  //         const target = rectTop + positionY;
+  //       e.preventDefault();
+  //       const hrefLink = gnavLink.getAttribute('href');
+  //       const targetContent = document.getElementById(hrefLink.replace('#', ''));
+  //       const rectTop = targetContent.getBoundingClientRect().top;
+  //       const positionY = window.pageYOffset;
+  //       const target = rectTop + positionY;
+  //       console.log(rectTop);
 
   //         window.scrollTo({
   //             top: target,
   //             behavior: 'smooth',
   //         });
+  //       });
+  //     });
 
 
 
@@ -174,6 +176,25 @@ document.addEventListener("DOMContentLoaded", function () {
       this.classList.remove("slideGnav");
     });
   });
+
+
+  // gsap.to(window, {duration: 2, scrollTo: "#work__menu"});
+  const h = document.getElementById('header');
+gsap.utils.toArray('a[href^="#"]').forEach(function(a) {
+  a.addEventListener("click", function(e) {
+    e.preventDefault();
+    gsap.to( window, {
+      duration: 1,
+      ease: 'power4.out',
+      scrollTo: {
+        y: e.target.getAttribute("href"),
+        autoKill: true,
+        offsetY: h.offsetHeight, //ヘッダーの高さをセット
+      }
+    });
+  });
+});
+
 
   //GSAP intro animation for sp and tab
   const letterA = document.querySelector(".intro__a");

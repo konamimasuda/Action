@@ -823,9 +823,7 @@
             }
             
             @media screen and (min-width: 900px) {
-                // gap: 8px;
                 width: 33%;
-                // width: 30vw;
                 margin-bottom: 0;
             }
 
@@ -1013,18 +1011,17 @@
         &__pic {
             width: 100%;
             max-width: 500px;
-            height: fit-content;
             margin: 0 auto 32px;
 
             @media screen and (min-width: 1024px) {
                 order: 2;
-                width: 50vw;
-                max-width: 660px;
-
                 position: absolute;
                 top: 50%;
-                right: -5%;
+                left: 57%;
                 z-index: -1;
+                width: 50vw;
+                max-width: 660px;
+                margin-bottom: 0;
                 transform: translateY(-50%);
             }
 
@@ -1060,20 +1057,20 @@
             border-bottom: 1px solid $white;
 
             &:first-of-type {
-                margin-bottom: 24px;
+                margin-bottom: 32px;
             }
 
             @media screen and (min-width: 768px) {
                 width: 100%;
+
+                &:first-of-type {
+                    margin-bottom: 42px;
+                }
             }
 
             @media screen and (min-width: 1024px) {
                 width: 70%;
                 max-width: 570px;
-
-                &:first-of-type {
-                    margin-bottom: 42px;
-                }
 
                 &:last-of-type {
                     & .profile__row:last-of-type {
@@ -1209,14 +1206,17 @@
         justify-content: center;
         align-items: center;
         width: 100%;
+        margin-bottom: 24px;
 
         @media screen and (min-width: 768px) {
             height: 80vh;
+            margin-bottom: 32px;
         }
 
         @media screen and (min-width: 1024px) {
             justify-content: flex-end;
             height: 100vh;
+            margin-bottom: 60px;
         }
 
         &__thanks {
