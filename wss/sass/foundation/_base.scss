@@ -1,0 +1,49 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+// baseファイルはサイトの基本的な設定などを行います
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $jp;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.875em;
+    color: $black-color;
+}
+
+section {
+    margin-bottom: 160px;
+}
+
+h1, h2, h3 {
+    font-family: $en;
+    line-height: 1;
+}
+
+h1 {
+    margin-bottom: 40px;
+    font-size: 100px;
+}
+
+h2 {
+    margin-bottom: 40px;
+    font-size: 80px;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: $black-color;
+    transition: all ease-in-out .4s;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

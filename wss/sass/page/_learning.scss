@@ -1,0 +1,410 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#learning {
+  @mixin lead {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: $base-color;
+  }
+
+
+  .mv {
+    display: flex;
+    margin-bottom: 160px;
+
+    &__pic {
+      width: 960px;
+      height: 980px;
+    }
+
+    &__box {
+      margin: 290px 0 0 150px;
+
+    }
+
+
+    &__lead {
+      @include lead;
+    }
+
+
+    &__txt {
+      width: 660px;
+      font-size: 16px;
+    }
+  }
+
+  .tools {
+    width: 1277px;
+    margin: 0 auto 160px;
+
+    &__ttl::after {
+      content: url(../images/learning/click.png);
+      position: relative;
+      top: -8px;
+      left: 40px;
+    }
+
+    &__container {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding-bottom: 60px;
+      border-bottom: 1px solid #000;
+      margin-bottom: 60px;
+    }
+
+    &__container--1 {
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 60px;
+      margin-bottom: 60px;
+      border-bottom: 1px solid #000;
+    }
+
+    &__container--2 {
+      display: flex;
+    }
+
+    &__box {
+      width: 430px;
+      height: 226px;
+    }
+
+    &__box--1 {
+      width: 413px;
+      margin-right: 60px;
+    }
+
+    &__box--2 {
+      padding-right: 90px;
+      border-right: 1px solid;
+      
+    }
+
+    &__box--3 {
+      display: flex;
+      flex-direction: column;
+      margin-left: 80px;
+    }
+
+    &__lead {
+      @include lead;
+    }
+
+
+    &__sub {
+      margin-bottom: 20px;
+      font-family: $en;
+      font-weight: bold;
+      font-size: 48px;
+    }
+
+    &__txt {
+      font-size: 14px;
+    }
+
+
+    &__txt--1 {
+      width: 558px;
+      margin-bottom: 60px;
+      font-size: 14px;
+    }
+
+
+  }
+
+  .icon {
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+
+
+    &--2 {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    
+
+    &__img {
+      width: 80px;
+      height: 70px;
+      margin-bottom: 10px;
+      object-fit: scale-down;
+    }
+
+
+
+    &__img--vs {
+      width: 110px;
+      height: 70px;
+      margin-bottom: 10px;
+      padding-left: 10px;
+      object-fit: scale-down;
+    }
+
+
+
+    &__img--1 {
+      width: 80px;
+      height: 70px;
+      margin-bottom: 10px;
+      object-fit: scale-down;
+    }
+
+
+    &__txt {
+      font-weight: 500;
+      text-align: center;
+      text-decoration: underline;
+    }
+
+    &__txt--ps {
+      font-weight: 500;
+      text-align: center;
+      text-decoration: underline;
+    }
+
+    &__txt--vs {
+      font-weight: 500;
+      text-decoration: underline;
+      margin-right: 20px;
+    }
+
+    &__txt--1 {
+      font-weight: 500;
+      text-align: center;
+      text-decoration: underline;
+    }
+  }
+
+
+
+  .md {
+
+    &-btn {
+      opacity: .3;
+      padding: 0 40px;
+    }
+    
+    
+    &-btn:hover {
+      opacity: 1;
+      transition: .5s;
+    }
+    
+        &-btn--1 {
+          width: 244px;
+          cursor: pointer;
+    
+        }
+    
+    &-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      opacity: .7;
+      z-index: 9999;
+    }
+
+    &-contents {
+      display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      width: 800px;
+      height: auto;
+      overflow: hidden;
+      transform: translateX(-50%);
+      z-index: 10000;
+    }
+
+    &-inner {
+      padding: 24px 40px;
+      background: #fff;
+      height: auto;
+    }
+
+    &-xmark {
+      position: absolute;
+      top: 34px;
+      right: 20px;
+      width: 25px;
+      height: 22px;
+      z-index: 9999;
+      cursor: pointer;
+    }
+
+    &-xmark span {
+      height: auto;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #333;
+      border-radius: 4px;
+    }
+
+    &-xmark span:nth-of-type(1) {
+      top: 0;
+      transform: translateY(10px) rotate(-45deg);
+    }
+
+    &-xmark span:nth-of-type(2) {
+      bottom: 0;
+      transform: translateY(-10px) rotate(45deg);
+    }
+  }
+
+  .modal {
+
+    &__ttl {
+      padding: 30px;
+      text-align: center;
+      font-size: 32px;
+    }
+
+    &__img {
+      width: 100px;
+      height: 100px;
+      margin-right: 60px;
+      object-fit: scale-down;
+
+    }
+
+    &__box {
+      display: flex;
+      align-items: center;
+    }
+
+    &__txt {
+      font-size: 14px;
+      text-align: left;
+    }
+  }
+
+  .curriculum {
+    &__lead {
+      @include lead;
+      margin-left: 790px;
+    }
+
+    &__ttl {
+      margin-bottom: 80px;
+      text-align: center;
+    }
+
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__container--1 {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__box {
+      width: 50%;
+      padding-left: 160px;
+    }
+
+    &__box--1 {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      color: #0089CD;
+    }
+
+    &__box--2 {
+      width: 50%;
+      padding-left: 140px;
+    }
+
+    &__no {
+      margin-right: 20px;
+      font-size: 64px;
+      font-family: $en;
+    }
+
+    &__month {
+      font-family: $en;
+      font-size: 24px;
+    }
+
+    &__pic {
+      width: 50%;
+      height: 1080px;
+    }
+
+    &__sub {
+      font-size: 64px;
+      font-family: $en;
+      margin-bottom: 60px;
+    }
+
+    &__sub--1 {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    &__dl {
+      width: 719px;
+    }
+
+    &__dl--1 {
+      width: 741px;
+    }
+
+    &__list {
+      margin-bottom: 12px;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    &__list::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      background: #000;
+      border-radius: 50%;
+      position: relative;
+      top: -2px;
+      left: -3px;
+    }
+
+    &__txt {
+      margin-bottom: 44px;
+      font-size: 16px;
+    }
+
+    &__check {
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      width: 678px;
+    }
+
+    &__check::before {
+      content: url(../images/learning/check.png);
+      height: 50px;
+      margin-right: 20px;
+      vertical-align: middle;
+    }
+  }
+}

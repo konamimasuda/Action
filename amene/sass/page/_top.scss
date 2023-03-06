@@ -1,0 +1,295 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+
+#top {
+
+    //main-mv
+    .mv {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 90vh;
+        margin: 0 160px 186px 160px;
+        padding-right: 60px;
+        font-size: 20px;
+        background: url(../images/mv.jpg) center center / cover no-repeat;
+        color: #fff;
+    }
+
+    //main-concept
+    .concept {
+        &__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 120px;
+            margin-bottom: 84px;
+        }
+
+        &__ttl {
+            margin-bottom: 50px;
+        }
+
+        &__image {
+            width: 60%;
+            height: 650px;
+            background: url(../images/concept/concept.jpg) center center / cover no-repeat;
+        }
+
+        &__box {
+            width: 40%;
+        }
+
+        &__txt {
+            margin-bottom: 50px;
+            line-height: 1.5;
+            white-space: pre-line;
+        }
+
+        &__btn {
+            width: 200px;
+            text-align: center;
+        }
+
+        &__link {
+            padding: 20px;
+            letter-spacing: 0.2rem;
+            background: $accent-color;
+            border-radius: 50px;
+            color: #fff;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+
+        &__pic {
+            display: flex;
+            justify-content: space-between;
+            width: 1440px;
+            margin: 0 auto;
+        }
+
+        &__img {
+            width: 450px;
+            height: 325px;
+
+            &:nth-of-type(1) {
+                background: url(../images/concept/pic1.jpg) center center / cover no-repeat;
+            }
+
+            &:nth-of-type(2) {
+                background: url(../images/concept/pic2.jpg) center center / cover no-repeat;
+            }
+
+            &:nth-of-type(3) {
+                background: url(../images/concept/pic3.jpg) center center / cover no-repeat;
+            }
+        }
+    }
+
+    //main-product
+    .product {
+        &__ttl {
+            text-align: center;
+        }
+
+        &__container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 140px;
+            width: 1440px;
+            margin: 0 auto;
+        }
+
+        &__box {
+            margin-bottom: 105px;
+        }
+
+        &__pic {
+            margin-bottom: 30px;
+        }
+
+        &__sub {
+            margin-bottom: 15px;
+            font-size: 22px;
+            letter-spacing: 0.2rem;
+        }
+
+        &__txt {
+            font-size: 14.5px;
+            line-height: 1.8;
+        }
+
+        &__btn {
+            width: 200px;
+            margin: 0 auto 120px;
+            text-align: center;
+        }
+
+        &__link {
+            padding: 20px;
+            letter-spacing: 0.2rem;
+            border-radius: 50px;
+            background: $accent-color;
+            color: #fff;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+
+        &__image {
+            width: 90%;
+            height: 480px;
+            margin-left: auto;
+            background: url(../images/product/product.jpg) center center / cover no-repeat;
+        }
+    }
+
+    //main-service
+    .service {
+
+        text-align: center;
+
+        &__cap {
+            margin-bottom: 100px;
+            white-space: pre-line;
+        }
+
+        &__container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 110px;
+            width: 1440px;
+            margin: 0 auto 145px;
+        }
+
+        &__pic {
+            margin-bottom: 45px;
+        }
+
+        &__sub {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        &__txt {
+            font-size: 14.5px;
+            line-height: 1.7;
+            white-space: pre-line;
+        }
+
+        &__small {
+            font-size: 13.5px;
+        }
+
+        &__btn {
+            width: fit-content;
+            margin: auto;
+            border: 1px solid $base-color;
+        }
+
+        &__link {
+            padding: 30px 95px;
+
+            &:hover {
+                background: $base-color;
+                color: #fff;
+            }
+        }
+
+        &__faq {
+            font-size: 25px;
+        }
+    }
+
+    //main-news
+    .news {
+        
+        text-align: center;
+
+        &__list {
+            display: grid;
+            grid-template-columns: 1fr 6fr;
+            row-gap: 60px;
+            width: 880px;
+            margin: 0 auto 135px;
+
+        }
+
+        &__txt {
+            text-align-last: left;
+        }
+
+        &__btn {
+            width: 200px;
+            margin: 0 auto 120px;
+            text-align: center;
+        }
+
+        &__link {
+            padding: 20px;
+            letter-spacing: 0.2rem;
+            border-radius: 50px;
+            background: $accent-color;
+            color: #fff;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+
+    //main-shopinf
+    .shopinfo {
+        padding-bottom: 165px;
+        background: $accent-color;
+
+        &__ttl {
+            padding-top: 120px;
+            text-align: center;
+            color: #fff;
+        }
+
+        &__container {
+            display: flex;
+            justify-content: space-between;
+            width: 1440px;
+            margin: 0 auto;
+        }
+
+        &__address {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &__name {
+            font-size: 38px;
+        }
+
+        &__txt {
+            line-height: 1.7;
+            white-space: pre-line;
+        }
+
+        &__btn {
+            width: 200px;
+            text-align: center;
+        }
+
+        &__link {
+            padding: 20px;
+            letter-spacing: 0.2rem;
+            border-radius: 50px;
+            background: #fff;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.65);
+            }
+        }
+    }
+}

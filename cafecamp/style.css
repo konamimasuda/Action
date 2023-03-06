@@ -1,0 +1,336 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans JP", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 50px;
+}
+.header__ttl {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 24px;
+}
+.header__link {
+  padding: 15px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  color: #fff;
+}
+.header__link:hover {
+  color: #aaa;
+}
+.gnav {
+  display: flex;
+  list-style-type: none;
+}
+.gnav__link {
+  display: block;
+  padding: 15px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+.gnav__link:hover {
+  color: #aaa;
+}
+
+/* main */
+.mv {
+  height: 100vh;
+  background: url(img/mv.jpg) center center / cover;
+}
+
+/* about */
+.about {
+  padding-top: 120px;
+  margin-bottom: 150px;
+  text-align: center;
+}
+
+.about__ttl {
+  margin-bottom: 45px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 38px;
+  letter-spacing: 0.5rem;
+  line-height: 2;
+}
+.about__txt {
+  font-size: 15px;
+  letter-spacing: 0.15rem;
+  line-height: 2;
+}
+.about__ttl ~ .about__txt {
+  margin-bottom: 30px;
+}
+
+/* activity */
+.activity {
+  padding-top: 150px;
+  background: #eee;
+}
+.activity__ttl {
+  margin-bottom: 45px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0.2rem;
+}
+.activity__container {
+  width: 1380px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-bottom: 150px;
+}
+.activity__box {
+    width: 300px;
+}
+.activity__box:nth-of-type(1):before {
+  content: "";
+  display: block;
+  height: 300px;
+  margin-bottom: 20px;
+  background: url(img/point_01.png) center center / cover;
+}
+.activity__box:nth-of-type(2):before {
+  content: "";
+  display: block;
+  height: 300px;
+  margin-bottom: 20px;
+  background: url(img/point_02.jpg) center center / cover;
+}
+.activity__box:nth-of-type(3):before {
+  content: "";
+  display: block;
+  height: 300px;
+  margin-bottom: 20px;
+  background: url(img/point_03.jpg) center center / cover;
+}
+.activity__box:nth-of-type(4):before {
+  content: "";
+  display: block;
+  height: 300px;
+  margin-bottom: 20px;
+  background: url(img/point_04.jpg) center center / cover;
+}
+.activity__sub {
+  margin-bottom: 12px;
+}
+.activity__txt {
+  font-size: 13px;
+  letter-spacing: 0.1rem;
+  line-height: 1.8;
+}
+.about__image {
+  height: 500px;
+  background: url(img/point_img.jpg) center center / cover;
+}
+
+/* news */
+.news {
+  margin-bottom: 150px;
+  padding-top: 120px;
+}
+.news__ttl {
+  margin-bottom: 45px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0.2rem;
+}
+.news__ttl::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  margin-top: 150px;
+  height: 900px;
+  background: #eee;
+}
+.news__container {
+  width: 1380px;
+  display: grid;
+  grid-template-columns: 433px 433px 433px;
+  gap: 50px 40px;
+  margin: 0 auto;
+}
+.news__box:nth-of-type(1) .news__sub::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 350px;
+    margin-bottom: 20px;
+    background: url(img/news_01.jpg) center center / cover;
+}
+.news__box:nth-of-type(2) .news__sub::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 350px;
+    margin-bottom: 20px;
+    background: url(img/news_02.jpg) center center / cover;
+}
+.news__box:nth-of-type(3) .news__sub::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 350px;
+    margin-bottom: 20px;
+    background: url(img/news_03.jpg) center center / cover;
+}
+.news__box:nth-of-type(4) .news__sub::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 350px;
+    margin-bottom: 20px;
+    background: url(img/news_04.jpg) center center / cover;
+}
+.news__box:nth-of-type(5) .news__sub::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 350px;
+    margin-bottom: 20px;
+    background: url(img/news_05.jpg) center center / cover;
+}
+.news__box:nth-of-type(6) .news__sub::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 350px;
+    margin-bottom: 20px;
+    background: url(img/news_06.jpg) center center / cover;
+}
+.news__sub {
+  margin-bottom: 8px;
+}
+.news__txt {
+  font-size: 14px;
+}
+
+/* access */
+.access {
+  margin-bottom: 150px;
+  padding-top: 120px;
+}
+.access__ttl {
+  margin-bottom: 60px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0.2rem;
+}
+.access__cap {
+  margin-bottom: 50px;
+  font-size: 20px;
+  text-align: center;
+}
+.access__cap::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 5%;
+  z-index: -1;
+  width: 90%;
+  height: 400px;
+  margin-top: 290px;
+  background: url(img/accsess_img.jpg) center center / cover;
+}
+.access__map {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin: 0 auto;
+  width: 1380px;
+}
+.access__address {
+  list-style-type: none;
+}
+.access__img {
+display: block;
+  width: 100%;
+}
+.access__list {
+  margin-bottom: 12px;
+  font-size: 19px;
+}
+.access__way {
+  margin-bottom: 5px;
+}
+
+/* contact */
+.contact {
+  padding-top: 120px;
+  text-align: center;
+}
+.contact__ttl {
+  margin-bottom: 45px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0.2rem;
+}
+.contact__cap {
+  margin-bottom: 18px;
+  font-size: 15px;
+}
+.contact__tel {
+  margin-bottom: 35px;
+  font-size: 34px;
+  letter-spacing: 0.3rem;
+}
+.contact__apply {
+  width: fit-content;
+  margin: 0 auto 35px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.4rem;
+  border: 3px solid #000;
+}
+.contact__link {
+  display: block;
+  padding: 25px 130px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  color: #000;
+}
+.contact__link:hover {
+  background: #000;
+  color: #fff;
+}
+.contact__txt {
+  margin-bottom: 150px;
+  line-height: 2;
+}
+.contact__image {
+  width: 100%;
+  height: 800px;
+  background: url(img/camp_img.jpg) center center / cover;
+}
+
+/* footer */
+.footer {
+  padding: 30px 0;
+}
+.footer__copy {
+  text-align: center;
+}

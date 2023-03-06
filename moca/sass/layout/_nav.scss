@@ -1,0 +1,183 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+.gnav {
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.06em;
+    
+    &__nav {
+        display: flex;
+        align-items: center;
+    }
+    
+    &__link {
+        padding: 5px 25px;
+        color: #fff;
+        transition: all ease-out .6s;
+
+        &:hover {
+            opacity: 0.3;
+        }
+    }
+}
+
+.btn {
+    position: fixed;
+    top: 46px;
+    right: 80px;
+    z-index: 25;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    transition: all ease-out .6s;
+    cursor: pointer;
+    
+    &:hover {
+        background: #fff;
+        
+        & .btn__top,
+        & .btn__bottom {
+            background: $black;
+        }
+
+    }
+
+    &__top,
+    &__bottom {
+        display: block;
+        width: 15px;
+        height: 1px;
+        background: #fff;
+        transition: all ease-out .6s;
+    }
+
+    &__top {
+        transform: translateY(-2px);
+    }
+
+    &__bottom {
+        transform: translateY(2px);
+    }
+}
+
+.slide {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: -5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 40%;
+    height: 100vh;
+    padding: 0 80px 80px 65px;
+    background: rgba(246, 230, 228, 0.8);
+    transition: all ease-out .4s;
+    transform: translateX(100%);
+    color: $black;
+    opacity: 0;
+
+    
+
+    
+    &__nav {
+        margin-bottom: 60px;
+
+        &::after {
+                content: "";
+                display: block;
+                width: 608px;
+                height: 1px;
+                margin-left: 15px;
+                background: $line;
+                overflow: hidden;
+        }
+    }
+    
+
+    &__list {
+        margin-bottom: 60px;
+    }
+    
+    &__link {
+        width: fit-content;
+        padding: 8px 15px;
+        font-size: 25px;
+        line-height: 1.4;
+        letter-spacing: 0.06em;
+        color: $black;
+        transition: all ease-out .6s;
+
+        &:hover {
+            opacity: 0.4;
+        }
+        
+    }
+
+    &__follow {
+        margin: 0 0 8px 15px;
+        font-size: 14px;
+        line-height: 1.1;
+        letter-spacing: 0.06em;
+    }
+    
+    &__sns {
+        // margin-left: 15px;  
+        width: fit-content;
+        font-size: 14px;
+        line-height: 2;
+        letter-spacing: 0.06em;
+    }
+    
+    &__insta {
+        display: flex;
+        align-items: center;
+        padding: 8px 15px;
+        color: $black;
+        transition: all ease-out .6s;
+        
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin-right: 5px;
+            background: url(../images/instagram.png) center center / cover no-repeat;
+        }
+
+        &:hover {
+            opacity: 0.4;
+        }
+    }
+    
+}
+
+.category {
+    display: flex;
+    gap: 3px;
+    margin-left: 5px;
+    
+    &__list {
+        margin-bottom: 0;
+    }
+
+    &__link {
+        padding: 5px 10px;
+        font-size: 14px;
+        line-height: 1.1;
+        letter-spacing: 0.06em;
+        color: $black;
+        transition: all ease-out .6s;
+
+        &:hover {
+            opacity: 0.4;
+        }
+    }
+}

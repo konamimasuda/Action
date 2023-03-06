@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ヘッダー */
+.header__box {
+    width: 850px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* サイトタイトル */
+.header__ttl {
+    width: 120px;
+    text-align: center;
+    display: inline-block;
+}
+.header__link {
+    padding: 3px 0;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    background-color: rgb(66, 66, 66);
+    display: block;
+}
+
+
+/* ナビゲーション */
+.gnav__list {
+    width: 80px;
+    display: inline-block;
+    text-align: right;
+}
+.gnav__link {
+    color: rgb(58, 58, 58);
+    text-decoration: none;
+    font-size: 14.5px;
+    display: block;
+}
+.gnav__link:hover {
+    color: rgb(141, 141, 141);
+}
+
+/* メイン */
+.main,.footer {
+    color: rgb(58, 58, 58);
+    text-align: center;
+}
+.mv {
+    width: 100%;
+    height: 600px;
+    background: url(img/mainvisual.jpg) center center / 100% auto;
+}
+.about,.bicycle {
+    margin: 110px 0;
+}
+.about__box,.bicycle__box {
+    margin: 70px 0;
+    display: flex;
+    justify-content: center;
+}
+.about__ttl,.bicycle__ttl {
+    padding: 9px 0;
+    font-size: 30px;
+    border-bottom: 1px solid rgb(58, 58, 58);
+    display: inline;
+}
+.about__img {
+    width: 100px;
+    border-radius: 50%;
+}
+.about__name,.bicycle__name {
+    padding: 10px 0;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+}
+.about__explain {
+    width: 400px;
+    margin: 0 20px;
+}
+.about__name {
+    text-align: left;
+}
+.about__txt,.bicycle__txt {
+    font-size: 14.5px;
+}
+.bicycle__set {
+    margin: 0 8.5px;
+}
+.bicycle__img {
+    width: 270px;
+}
+
+/* フッター */
+.footer__copy {
+    font-size: 8px;
+}

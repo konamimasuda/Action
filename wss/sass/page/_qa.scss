@@ -1,0 +1,130 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#qa {
+
+            //lead-mixin
+            @mixin lead {
+                margin-bottom: 20px;
+                font-size: 18px;
+                font-weight: 700;
+                letter-spacing: 0.15em;
+                color: $base-color;
+            }
+
+    .qa {
+        margin: 160px 0;
+        padding: 0 320px;
+
+
+        &__top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 160px;
+        }
+
+        &__lead {
+            @include lead;
+        }
+
+        &__ttl {
+            margin-bottom: 0;
+        }
+
+        &__txt {
+            width: 924px;
+        }
+
+
+        //q&a
+        &__q {
+            position: relative;
+            margin-bottom: 42px ;
+            padding: 35px 32px 35px 65px;
+            background: #d4d4d4;
+            color: #020202;
+            cursor: pointer;
+
+            &::before {
+                content: "Q.";
+                position: absolute;
+                top: 32px;
+                left: 32px;
+                display: inline-block;
+                font-size: 24px;
+
+            }
+
+            & .qa__icon::before {
+                content: "";
+                position: absolute;     
+                top: 35px;
+                right: 32px;
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                background: url(./../images/plus.png) center center / cover;
+            }
+            
+            & .qa__icon::after {
+                content: "";
+                position: absolute;
+                top: 35px;
+                right: 32px;
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                background: url(./../images/minus.png) center center / cover;
+            }
+        }
+
+        &__a {
+            display: flex;
+            align-items: center;
+            padding: 32px;
+
+            &::before {
+                content: "A.";
+                display: inline-block;
+                margin-right: 10px;
+                font-size: 24px;
+            }
+        }
+
+
+        .qa__check {
+            display: none;
+        }
+
+        .qa__label {
+            display: block;
+            margin-bottom: 1px;
+            color: #fff;
+        }
+
+        .qa__content {
+            display: flex;
+            align-items: center;
+            height: 0;
+            opacity: 0;
+            transition: .5s;
+            visibility: hidden;
+        }
+
+
+        .qa__check:checked+.qa__label+.qa__content {
+            height: 120px;
+            margin-bottom: 40px;
+            background: #F1FAFF;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .qa__check:checked+.qa__label .qa__icon:before {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}

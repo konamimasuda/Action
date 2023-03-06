@@ -1,0 +1,213 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#es {
+
+    //lead-mixin
+    @mixin lead {
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        color: $base-color;
+    }
+
+    .mv {
+        display: flex;
+        gap: 150px;
+        margin-bottom: 160px;
+
+        &__pic {
+            width: 960px;
+            height: 980px;
+        }
+
+        &__box {
+            margin-top: 290px;
+        }
+
+        &__lead {
+            @include lead;
+        }
+
+        &__txt {
+            width: 660px;
+        }
+    }
+
+    .rate {
+        display: flex;
+        gap: 240px;
+        width: 1440px;
+        margin: 0 auto 160px;
+
+        &__ttl {
+            margin-bottom: 72px;
+            font-size: 32px;
+            text-align: center;
+        }
+
+        &__pic {
+            width: fit-content;
+            height: fit-content;
+        }
+    }
+
+    .job {
+
+        display: flex;
+        flex: 1;
+        color: #fff;
+
+        &__box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 480px;
+            height: 520px;
+            padding: 0 50px;
+
+            &:nth-of-type(1) {
+                background: url(../images/es/es_c.jpg) center center / cover no-repeat;
+            }
+
+            &:nth-of-type(2) {
+                background: url(../images/es/es_e.jpg) center center / cover no-repeat;
+            }
+
+            &:nth-of-type(3) {
+                background: url(../images/es/es_d.jpg) center center / cover no-repeat;
+            }
+
+            &:nth-of-type(4) {
+                background: url(../images/es/es_dr.jpg) center center / cover no-repeat;
+            }
+        }
+
+        &__ttl {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+    }
+
+    .company {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 100px 320px;
+        background: $bg-color;
+        color: #fff;
+
+
+        &__lead {
+            @include lead;
+            color: #fff;
+        }
+
+        &__ttl {
+            margin-bottom: 100px;
+        }
+
+        &__container {
+         display: grid;
+         grid-template-columns: 390px 210px 415px;
+         grid-template-rows: 170px 130px 230px;
+         justify-items: center;
+         align-items: end;
+         column-gap: 90px;
+         row-gap: 90px;
+         margin-bottom: 100px;
+         font-size: 18px;
+         text-align: center;
+        }
+
+        &__box {
+            width: fit-content;
+            &:nth-of-type(3) .company__pic {
+                width: fit-content;
+                height: 120px;
+            }
+            &:nth-of-type(6) .company__pic {
+                width: fit-content;
+                height: 66px;
+                margin: 0 auto 20px;
+            }
+            &:nth-of-type(8) .company__pic {
+                width: fit-content;
+                height: 160px;
+                margin: 0 auto 20px;
+            }
+        }
+
+        &__link:hover {
+            opacity: 0.5;
+        }
+
+        &__pic {
+            width: fit-content;
+            height: fit-content;
+            margin-bottom: 20px;
+        }
+
+        &__img {
+            object-fit: contain;
+        }
+
+        &__etc {
+            width: 160px;
+            padding-bottom: 12px;
+            font-size: 18px;
+            text-align: center;
+            border-bottom: 1px solid $black-color;
+            color: $black-color;
+        }
+    }
+
+    .support {
+
+        margin: 0 240px 160px;
+
+        &__lead {
+            @include lead;
+        }
+
+        &__container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 80px;
+            row-gap: 24px;
+            width: 1440px;
+            margin: auto;
+            color: #fff;
+        }
+
+        &__box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        &__pic {
+            width: 680px;
+            height: 370px;
+        }
+
+        &__group {
+            position: relative;
+            top: -56px;
+            width: 624px;
+            padding: 40px;
+            background: $accent-color;
+
+        }
+
+        &__sub {
+            margin-bottom: 24px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+    }
+}

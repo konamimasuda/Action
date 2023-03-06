@@ -1,0 +1,60 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#top {
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 150px;
+
+        &__ttl {
+            width: 160px;
+            height: 150px;
+            margin-bottom: 0;
+            padding: 50px 25px;
+        }
+    }
+
+    .is-animation {
+        height: 80px;
+        background: $black-color;
+    }
+}
+
+#learning,
+#es,
+#interview,
+#company,
+#qa,
+#info,
+#pp {
+    
+  .header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px; 
+    background: $black-color;
+    transition: .3s;
+
+    &__ttl {
+        width: 160px;
+        height: 150px;
+        margin-bottom: 0;
+        padding: 50px 25px;
+    }
+  }
+}
