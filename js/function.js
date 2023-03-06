@@ -1721,7 +1721,7 @@ gsap.utils.toArray('a[href^="#"]').forEach(function(a) {
           {
             autoAlpha: 1,
             stagger: {
-              each: 0.5,
+              each: .8,
               from: "random",
             },
           }
@@ -1729,8 +1729,8 @@ gsap.utils.toArray('a[href^="#"]').forEach(function(a) {
 
         .to(".intro__cube", {
           rotateY: "-90deg",
-          duration: 50,
-          delay: 10,
+          duration: 100,
+          delay: 50,
         })
 
         .fromTo(
@@ -1741,7 +1741,7 @@ gsap.utils.toArray('a[href^="#"]').forEach(function(a) {
           {
             autoAlpha: 0,
             stagger: {
-              each: 0.5,
+              each: 0.8,
               from: "random",
             },
           }
@@ -1749,7 +1749,7 @@ gsap.utils.toArray('a[href^="#"]').forEach(function(a) {
 
         .to(".intro__wrap", {
           yPercent: -100,
-          duration: 50,
+          duration: 100,
           delay: 5,
         });
     }
