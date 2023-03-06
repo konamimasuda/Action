@@ -1,0 +1,24 @@
+@use "../global" as *;
+
+#top,
+#yoga,
+#pilates,
+#price {
+    
+    .rotateTop {
+        transform: rotate(45deg);
+    }
+    
+    .rotateBottom {
+        transform: rotate(-45deg);
+    }
+    
+    .slideGnav {
+        transform: translateY(0);
+    }
+    
+    .hoverCursor {
+        visibility: visible;
+        transform: scale(1);
+    }
+}
