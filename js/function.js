@@ -1729,7 +1729,7 @@ gsap.utils.toArray('a[href^="#"]').forEach(function(a) {
 
         .to(".intro__cube", {
           rotateY: "-90deg",
-          duration: 100,
+          duration: 150,
           delay: 50,
         })
 
@@ -1749,7 +1749,7 @@ gsap.utils.toArray('a[href^="#"]').forEach(function(a) {
 
         .to(".intro__wrap", {
           yPercent: -100,
-          duration: 100,
+          duration: 150,
           delay: 5,
         });
     }
@@ -1879,7 +1879,7 @@ gsap.utils.toArray('a[href^="#"]').forEach(function(a) {
           ".work__unit",
           {
             xPercent: -70,
-            duration: 150,
+            duration: 200,
             delay: 50,
           },
           "same5"
