@@ -178,3 +178,21 @@
     }
 
 }
+
+#works {
+
+    .resizeHeader {
+
+        &-sp {
+            font-size: 4.7vw;
+        }
+
+        &-tb {
+            font-size: 4.2vw;
+        }
+
+        &-pc {
+            font-size: 2.1vw;
+        }
+    }
+}

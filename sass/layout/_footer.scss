@@ -1,19 +1,146 @@
 @use "../global" as *;
 
-.footer {
-    padding: 32px 0;
+#top {
+
+  .footer {
+      padding: 32px 0;
+  
+      @media screen and (min-width: 768px) {
+        padding: 24px 0;
+      }
+  
+      &__copy {
+          font-size: 10px;
+          text-align: center;
+          color: $gray;
+  
+          @media screen and (min-width: 768px) {
+            font-size: 14px;
+          }
+      }
+  }
+
+}
+
+#works {
+
+  .footer {
+    
+    padding: 6.4vw 13px 32vw;
+    font-size: 6vw;
 
     @media screen and (min-width: 768px) {
-      padding: 24px 0;
+      padding: 3.125vw 32px 28vw;
+      font-size: 5.6vw;
+    }
+    
+    @media screen and (min-width: 1024px) {
+      padding: 4.1vw 80px 9.3vw;
+      font-size: 2.1vw;
+    }
+    
+    &__back {
+      width: fit-content;
+      margin: 0 0 12vw auto;
+      
+      @media screen and (min-width: 768px) {
+        margin: 0 0 10vw auto;
+      }
+    }
+    
+    &__nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 5vw;
+      font-size: 8vw;
+      list-style-type: none;
+
+      @media screen and (min-width: 768px) {
+        gap: 3vw;
+        font-size: 6vw;
+      }
+
+      @media screen and (min-width: 1024px) {
+        gap: 0;
+        font-size: 2.8vw;
+      }
     }
 
-    &__copy {
-        font-size: 10px;
-        text-align: center;
-        color: $gray;
+    &__link {
+      @include link($display: inline-block);
+      display: flex;
+      align-items: flex-start;
+      font-weight: 600;
+
+      @media screen and (min-width: 1024px) {
+        padding: 0.8vw;
+        transition: ease-in-out .2s;
+
+        &:hover {
+          opacity: .6;
+        }
+      }
+    }
+  }
+
+  .link {
+
+    &__prev {
+      &::before {
+        content: "PREV";
+        display: inline-block;
+        margin: .6vw 2vw 0 0;
+        font-size: 3vw;
+        
+        @media screen and (min-width: 768px) {
+          font-size: 2vw;
+        }
+        
+        @media screen and (min-width: 1024px) {
+          margin: .3vw .8vw 0 0;
+          font-size: 1vw;
+        }
+      }
+    }
+    
+    &__current {
+      
+      color: #aaa;
+      
+      &::before {
+        content: "CURRENT";
+        display: inline-block;
+        margin: .6vw 2vw 0 0;
+        font-size: 3vw;
 
         @media screen and (min-width: 768px) {
-          font-size: 14px;
+          font-size: 2vw;
         }
+
+        @media screen and (min-width: 1024px) {
+          margin: .3vw .8vw 0 0;
+          font-size: 1vw;
+        }
+      }
     }
+    
+    &__next {
+      &::before {
+        content: "NEXT";
+        display: inline-block;
+        margin: .6vw 2vw 0 0;
+        font-size: 3vw;
+
+        @media screen and (min-width: 768px) {
+          font-size: 2vw;
+        }
+
+        @media screen and (min-width: 1024px) {
+          margin: .3vw .8vw 0 0;
+          font-size: 1vw;
+        }
+      }
+    }
+  }
 }
