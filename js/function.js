@@ -25,30 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollUp.classList.add("isRisen");
   });
 
-
-  //link smooth scroll
-  
-  // const gnavLink = document.querySelectorAll('a[href^="#"]');
-    
-  // gnavLink.forEach((gnavLink) => {
-  //     gnavLink.addEventListener('click', (e) => {
-  //       e.preventDefault();
-  //       const hrefLink = gnavLink.getAttribute('href');
-  //       const targetContent = document.getElementById(hrefLink.replace('#', ''));
-  //       const rectTop = targetContent.getBoundingClientRect().top;
-  //       const positionY = window.pageYOffset;
-  //       const target = rectTop + positionY;
-  //       console.log(rectTop);
-
-  //         window.scrollTo({
-  //             top: target,
-  //             behavior: 'smooth',
-  //         });
-  //       });
-  //     });
-
-
-
   //reload
   let deviceFlag;
   if (window.innerWidth < 768) {
@@ -178,22 +154,82 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  // gsap.to(window, {duration: 2, scrollTo: "#work__menu"});
-  const h = document.getElementById('header');
-gsap.utils.toArray('a[href^="#"]').forEach(function(a) {
-  a.addEventListener("click", function(e) {
-    e.preventDefault();
-    gsap.to( window, {
-      duration: 1,
-      ease: 'power4.out',
-      scrollTo: {
-        y: e.target.getAttribute("href"),
-        autoKill: true,
-        offsetY: h.offsetHeight, //ヘッダーの高さをセット
-      }
-    });
-  });
-});
+
+
+
+
+  // const gnavLink = document.querySelectorAll('a[href^="#"]');
+
+  // gnavLink.forEach((gnavLink) => {
+  //   gnavLink.addEventListener("click", (e) => {
+  //     e.preventDefault();
+  //     // gsap.to(window, {duration: 2, scrollTo: gnavLink});
+  //     const hrefLink = gnavLink.getAttribute("href");
+  //     const targetContent = document.getElementById(hrefLink.replace("#", ""));
+  //     const rectTop = targetContent.getBoundingClientRect().top;
+  //     const positionY = window.pageYOffset;
+  //     const target = rectTop + positionY;
+  //     window.scrollTo({
+  //       top: target,
+  //       behavior: "smooth",
+  //     });
+  //     console.log(rectTop - positionY);
+  //   });
+  // });
+
+
+  // link smooth scroll
+  const gnavLink = document.querySelectorAll('a[href^="#"]');
+
+  gnavLink.forEach((gnavLink) => {
+      gnavLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        const hrefLink = gnavLink.getAttribute('href');
+        const targetContent = document.getElementById(hrefLink.replace('#', ''));
+        const rect = targetContent.getBoundingClientRect();
+        const rectTop = rect.top;
+        const rectLeft = rect.left;
+        const positionY = window.pageYOffset;
+        // const target = rectTop + positionY;
+        console.log(rectLeft);
+        // console.log(positionY);
+        
+
+          // window.scrollTo({
+          //     top: target,
+          //     behavior: 'smooth',
+          // });
+        });
+      });
+
+
+
+  //   const h = document.getElementById('header');
+  // gsap.utils.toArray('a[href^="#"]').forEach(function(a) {
+  //   a.addEventListener("click", function(e) {
+  //     e.preventDefault();
+
+  //     console.log(target)
+      
+  //     gsap.to( window, {
+  //       duration: 1,
+  //       ease: 'power4.out',
+  //       scrollTo: {
+  //         y: e.target.getAttribute("href"),
+  //         // x: 0,
+  //         autoKill: true,
+  //         offsetY: h.offsetHeight, //ヘッダーの高さをセット
+  //       }
+  //     });
+  //   });
+  // });
+
+
+
+
+
+
+
 
 
   //GSAP intro animation for sp and tab
@@ -1721,7 +1757,7 @@ gsap.utils.toArray('a[href^="#"]').forEach(function(a) {
           {
             autoAlpha: 1,
             stagger: {
-              each: .8,
+              each: 0.8,
               from: "random",
             },
           }
@@ -1874,7 +1910,6 @@ gsap.utils.toArray('a[href^="#"]').forEach(function(a) {
           "same4"
         )
 
-        
         .to(
           ".work__unit",
           {
@@ -1883,12 +1918,12 @@ gsap.utils.toArray('a[href^="#"]').forEach(function(a) {
             delay: 50,
           },
           "same5"
-          )
+        )
 
-          .to(".work__feature", {
-            yPercent: -10,
-            duration: 20,
-          });
+        .to(".work__feature", {
+          yPercent: -10,
+          duration: 20,
+        });
     }
 
     function workMain() {
@@ -1987,7 +2022,7 @@ gsap.utils.toArray('a[href^="#"]').forEach(function(a) {
           opacity: 1,
           duration: 3,
         })
-        
+
         .to(".skill__note", {
           opacity: 1,
           duration: 3,
