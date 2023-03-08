@@ -8,7 +8,8 @@
 #top {
     width: 100%;
     height: 100vh;
-
+    
+    
     .wrapper {
         overflow-y: scroll;
 
@@ -1156,8 +1157,11 @@
         &__box {
             display: flex;
             justify-content: space-between;
-            gap: 27px;
             width: 100%;
+            
+            @media screen and (min-width: 1024px) {
+                gap: 27px;
+            }
         }
 
         &__item {

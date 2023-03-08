@@ -8,7 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
     color: "#fafafa",
     trailColor: "#D4D4D4",
     trailWidth: 2,
-    svgStyle: { width: "100%", height: "100%" },
+    svgStyle: {
+      width: "100%",
+      height: "100%",
+    },
   });
 
   bar.animate(1.0, function () {
@@ -145,7 +148,6 @@ document.addEventListener("DOMContentLoaded", function () {
     gnav.classList.toggle("slideGnav");
 
     gnav.addEventListener("click", function () {
-      console.log(this);
       btnTop.classList.remove("rotateTop");
       btnMiddle.classList.remove("hideMiddle");
       btnBottom.classList.remove("rotateBottom");
@@ -153,84 +155,124 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  //link smooth scroll
+  const gnavLinks = document.querySelectorAll('a[href^="#"]');
 
+  //リンクロック解除
+  function allLinkVisible() {
+    gnavLinks.forEach((allLink) => {
+      allLink.style.pointerEvents = "visible";
+    });
+  }
 
+  gnavLinks.forEach((gnavLink) => {
+    gnavLink.addEventListener("click", (e) => {
+      e.preventDefault();
 
+      //リンクロック解除
+      allLinkVisible();
+      //gnavLinkリンクロック
+      gnavLink.style.pointerEvents = "none";
 
+      const hrefLink = gnavLink.getAttribute("href");
+      const targetContent = document.getElementById(hrefLink.replace("#", ""));
+      const rectTop = targetContent.getBoundingClientRect().top;
+      const positionY = window.pageYOffset;
+      const target = rectTop + positionY;
+      const page = document.getElementById("top").getBoundingClientRect();
 
-  // const gnavLink = document.querySelectorAll('a[href^="#"]');
+      if (window.matchMedia("(min-width: 1024px)").matches) {
+        //各リンク先毎の調整
+        const gapBefore = {
+          work__menu: -500,
+          skill__menu: 2300,
+          profile__detail: -500,
+          contact: 0,
+        };
 
-  // gnavLink.forEach((gnavLink) => {
-  //   gnavLink.addEventListener("click", (e) => {
-  //     e.preventDefault();
-  //     // gsap.to(window, {duration: 2, scrollTo: gnavLink});
-  //     const hrefLink = gnavLink.getAttribute("href");
-  //     const targetContent = document.getElementById(hrefLink.replace("#", ""));
-  //     const rectTop = targetContent.getBoundingClientRect().top;
-  //     const positionY = window.pageYOffset;
-  //     const target = rectTop + positionY;
-  //     window.scrollTo({
-  //       top: target,
-  //       behavior: "smooth",
-  //     });
-  //     console.log(rectTop - positionY);
-  //   });
-  // });
+        const gapAfter = {
+          work__menu: 1500,
+          skill__menu: 0,
+          profile__detail: 0,
+          contact: 0,
+        };
 
+        const gapKey = hrefLink.replace("#", "");
 
-  // link smooth scroll
-  const gnavLink = document.querySelectorAll('a[href^="#"]');
+        if (rectTop > 0) {
+          window.scrollTo({
+            top: target + gapBefore[gapKey],
+            behavior: "smooth",
+          });
+        } else {
+          window.scrollTo({
+            top: target + gapAfter[gapKey],
+            behavior: "smooth",
+          });
+        }
+      } else if (
+        window.matchMedia("(min-width: 768px) and (max-width: 1023px)").matches
+      ) {
+        //各リンク先毎の調整 tab
+        const gapBefore = {
+          work__menu: 0,
+          skill__menu: 3000,
+          profile__detail: 580,
+          contact: 0,
+        };
 
-  gnavLink.forEach((gnavLink) => {
-      gnavLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        const hrefLink = gnavLink.getAttribute('href');
-        const targetContent = document.getElementById(hrefLink.replace('#', ''));
-        const rect = targetContent.getBoundingClientRect();
-        const rectTop = rect.top;
-        const rectLeft = rect.left;
-        const positionY = window.pageYOffset;
-        // const target = rectTop + positionY;
-        console.log(rectLeft);
-        // console.log(positionY);
-        
+        const gapAfter = {
+          work__menu: 0,
+          skill__menu: 0,
+          profile__detail: 0,
+          contact: 0,
+        };
 
-          // window.scrollTo({
-          //     top: target,
-          //     behavior: 'smooth',
-          // });
-        });
-      });
+        const gapKey = hrefLink.replace("#", "");
 
+        if (rectTop > 0) {
+          window.scrollTo({
+            top: target + gapBefore[gapKey],
+            behavior: "smooth",
+          });
+        } else {
+          window.scrollTo({
+            top: target + gapAfter[gapKey],
+            behavior: "smooth",
+          });
+        }
+      } else {
+        //各リンク先毎の調整 sp
+        const gapBefore = {
+          work__menu: 0,
+          skill__menu: 2650,
+          profile__detail: 550,
+          contact: 0,
+        };
 
+        const gapAfter = {
+          work__menu: 0,
+          skill__menu: 0,
+          profile__detail: 0,
+          contact: 0,
+        };
 
-  //   const h = document.getElementById('header');
-  // gsap.utils.toArray('a[href^="#"]').forEach(function(a) {
-  //   a.addEventListener("click", function(e) {
-  //     e.preventDefault();
+        const gapKey = hrefLink.replace("#", "");
 
-  //     console.log(target)
-      
-  //     gsap.to( window, {
-  //       duration: 1,
-  //       ease: 'power4.out',
-  //       scrollTo: {
-  //         y: e.target.getAttribute("href"),
-  //         // x: 0,
-  //         autoKill: true,
-  //         offsetY: h.offsetHeight, //ヘッダーの高さをセット
-  //       }
-  //     });
-  //   });
-  // });
-
-
-
-
-
-
-
-
+        if (rectTop > 0) {
+          window.scrollTo({
+            top: target + gapBefore[gapKey],
+            behavior: "smooth",
+          });
+        } else {
+          window.scrollTo({
+            top: target + gapAfter[gapKey],
+            behavior: "smooth",
+          });
+        }
+      }
+    });
+  });
 
   //GSAP intro animation for sp and tab
   const letterA = document.querySelector(".intro__a");
@@ -1914,8 +1956,8 @@ document.addEventListener("DOMContentLoaded", function () {
           ".work__unit",
           {
             xPercent: -70,
-            duration: 200,
-            delay: 50,
+            duration: 300,
+            delay: 10,
           },
           "same5"
         )
@@ -1936,7 +1978,6 @@ document.addEventListener("DOMContentLoaded", function () {
           markers: false,
         },
       });
-
       workMainTl.to(".work__menu", {
         yPercent: -100,
         duration: 100,
