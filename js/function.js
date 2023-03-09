@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
 
+
   const bar = new ProgressBar.Line(loading__bar, {
     strokeWidth: 4,
     easing: "easeInOut",
@@ -18,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
     $("#loading").fadeOut();
     $("#top").removeClass("fixed");
   });
+
+
 
   //scroll
   const scrollUp = document.getElementById("scroll");
@@ -46,6 +49,9 @@ document.addEventListener("DOMContentLoaded", function () {
       deviceFlag !== "pc" && window.location.reload();
     }
   });
+
+  
+
 
   //header
   window.addEventListener("scroll", function () {
@@ -158,7 +164,6 @@ document.addEventListener("DOMContentLoaded", function () {
   //link smooth scroll
   const gnavLinks = document.querySelectorAll('a[href^="#"]');
 
-  //リンクロック解除
   function allLinkVisible() {
     gnavLinks.forEach((allLink) => {
       allLink.style.pointerEvents = "visible";
@@ -169,9 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
     gnavLink.addEventListener("click", (e) => {
       e.preventDefault();
 
-      //リンクロック解除
       allLinkVisible();
-      //gnavLinkリンクロック
       gnavLink.style.pointerEvents = "none";
 
       const hrefLink = gnavLink.getAttribute("href");
@@ -179,10 +182,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const rectTop = targetContent.getBoundingClientRect().top;
       const positionY = window.pageYOffset;
       const target = rectTop + positionY;
-      const page = document.getElementById("top").getBoundingClientRect();
 
       if (window.matchMedia("(min-width: 1024px)").matches) {
-        //各リンク先毎の調整
         const gapBefore = {
           work__menu: -500,
           skill__menu: 2300,
@@ -213,7 +214,6 @@ document.addEventListener("DOMContentLoaded", function () {
       } else if (
         window.matchMedia("(min-width: 768px) and (max-width: 1023px)").matches
       ) {
-        //各リンク先毎の調整 tab
         const gapBefore = {
           work__menu: 0,
           skill__menu: 3000,
@@ -242,7 +242,6 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         }
       } else {
-        //各リンク先毎の調整 sp
         const gapBefore = {
           work__menu: 0,
           skill__menu: 2650,
