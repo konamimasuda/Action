@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // const main = document.getElementById("main-work");
     const ST = window.pageYOffset;
     const headerHeight = headerWork.offsetHeight;
-    console.log(ST);
 
     //header show/hide
 

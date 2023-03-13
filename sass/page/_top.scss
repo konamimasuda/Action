@@ -8,11 +8,11 @@
 #top {
     width: 100%;
     height: 100vh;
-    
-    
+
+
     .wrapper {
         overflow-y: scroll;
-        
+
         @media screen and (min-width: 1024px) {
             overflow-y: auto;
         }
@@ -578,13 +578,6 @@
             @media screen and (min-width: 1024px) {
                 margin-top: 50vh;
                 padding: 10% 4.1vw;
-
-                &::after {
-                    content: "";
-                    display: block;
-                    width: 30%;
-                }
-
             }
         }
 
@@ -806,7 +799,7 @@
             @media screen and (min-width: 1200px) {
                 row-gap: 40px;
                 padding: 10% 8.3vw;
-                
+
                 &::after {
                     content: "";
                     display: block;
@@ -831,7 +824,7 @@
                 width: 50%;
                 margin-bottom: 40px;
             }
-            
+
             @media screen and (min-width: 900px) {
                 width: 33%;
                 margin-bottom: 0;
@@ -921,7 +914,7 @@
         &__left {
             transform: translateX(100vw);
         }
-        
+
         &__right {
             transform: translateX(-100vw);
             align-self: flex-end;
@@ -1167,7 +1160,7 @@
             display: flex;
             justify-content: space-between;
             width: 100%;
-            
+
             @media screen and (min-width: 1024px) {
                 gap: 27px;
             }
