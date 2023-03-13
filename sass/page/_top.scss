@@ -578,6 +578,13 @@
             @media screen and (min-width: 1024px) {
                 margin-top: 50vh;
                 padding: 10% 4.1vw;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 30%;
+                }
+
             }
         }
 
@@ -602,6 +609,8 @@
             @media screen and (min-width: 1024px) {
                 width: 30%;
                 transition: ease-in-out .4s;
+
+
 
                 &:hover {
                     opacity: .7;
@@ -998,7 +1007,7 @@
             @media screen and (min-width: 1024px) {
                 flex-direction: row;
                 justify-content: space-between;
-                padding: calc(114px + 5%) 12.5vw 5%;
+                padding: calc(114px + 3%) 12.5vw 5%;
             }
         }
 

@@ -91,6 +91,12 @@
             }
         }
 
+        &__caution {
+            display: block;
+            margin: 16px 0;
+            color: #c00;
+        }
+
         &__visit {
             @media screen and (min-width: 768px) {
                 grid-area: area4;
